@@ -15,32 +15,32 @@
 
 %%===================================
 \begin{document}
-\include{front} % This is the titlepage
+\input{../front} % This is the titlepage
 \setcounter{page}{0}
 \pagenumbering{roman}
-\include{preface}
+\input{../preface}
 %\include{acknowledgment}
-\include{summary}
+\input{../summary}
 \tableofcontents
 \setcounter{page}{0}
 \pagenumbering{arabic}
-%\include{chapter01}
-\include{chapter02Theory}
-\include{chapter03Data}
-%\include{chapter02}
-%\include{chapter0n}
+\input{../chapter01}
+\input{../chapter02Theory}
+\input{../chapter02Data}
+\input{../chapter02}
+\input{../chapter0n}
 % Include more chapters as required.
 %%=========================================
 \appendix
-%\include{acronyms}
-%\include{appendix-b}
+\input{../acronyms}
+\input{../appendix-b}
 % Include more appendices as required.
 %%=========================================
-\bibliographystyle{apa}
-\addcontentsline{toc}{chapter}{\bibname}
-\bibliography{refs}  
+%\bibliographystyle{apa}
+%\addcontentsline{toc}{chapter}{\bibname}
+%\bibliography{refs}  
 %%=========================================
-%\include{vitae}         % Your curriculum Vitae     
+\input{../vitae}         % Your curriculum Vitae     
 %%=============================================
 
 \end{document}

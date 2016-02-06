@@ -1,0 +1,82 @@
+\chapter[Theory]{Theory}
+This chapter gives an introduction of/to the theory behind this thesis/paper. Some of the following sections only give a brief description of the theory whit sources for more in depth explanation. The main focus of this chapter is describing the theory behind the Markov chain Mote Carlo method for solving extreme value problem developed for this paper. 
+\section{Extreme value theory}
+peak over threshold..
+\section{Average Condition Exceedance Rate}
+blabla
+
+\section{Bayesian Inference}
+\label{ch:BayesianInference}
+
+\section{Markov Chain Monte Carlo Method}
+Markov Chain Monte Carlo (MCMC) is a powerful iterative method used to sample from probability distributions, which analytically or through other simulation methods, could be difficult and impracticable to sample from. The algorithm is constructed by converging the desired probability distribution to an irreducible and aperiodic Markov Chain with limiting distribution equal the target distribution. Independent of starting position the Markov Chain will then converge towards the desired probability distribution in the limit as the numbers of iterations goes to infinity. The first numbers of realizations from the Markov Chain until converging is called the burn-in period, and is discarded for further analyses. The remaining realizations, approximately follows the desired probability distribution, where the accuracy increase as the numbers of realizations increase. Monte Carlo method can then be used to calculate the quantity of interest like mean, expected value, future prediction, credible interval etc.
+
+\subsection{Gibbs Sampling}
+In situations where it is difficult to sample from the joint distribution, but applicable from the conditional distribution, Gibbs sampler is preferable. The principle of Gibbs sampling is to construct the Markov Chain, by repeatedly sample each parameter with the rest of the parameters as the condition. The Gibbs sampler start with an initial guess $\boldsymbol{X}^{0}=[X_1^0,\cdots, X_n^0]$ for the parameters, then iteratively update each as follows
+\begin{align}
+\label{eq:gibbs}
+\begin{split}
+    X_1^{t+1}& \sim f(X_1|X_2^{t},\cdots,X_n^{t}),\\
+    X_2^{t+1}& \sim f(X_2|X_1^{t+1},X_3^{t},\cdots,X_n^{t}),\\
+    \vdots \\
+    X_n^{t+1}& \sim f(X_n|X_1^{t+1},\cdots,X_{n-1}^{t+1}).
+\end{split}
+\end{align}
+where....
+The iterative process is repeated until enough realizations are generated for sufficient accuracy.\\
+REFFF!!
+
+\subsection{Metropolis–Hastings Algorithm}
+Metropolis–Hastings algorithm is another method for constructing a suitable Markov Chain. The algorithm is preferable for situations where a proportional distribution is simple to evaluate, while the target probability distribution is difficult. Bayesian inference (see chapter \ref{ch:BayesianInference}), often result in a distribution where the normalizing constant cannot analytically be calculated. While possible numerically, the normalizing constant often becomes computationally hard, which make it impracticable for iterative simulations. Using Metropolis–Hastings algorithm on a proportional distribution whiteout normalizing constant, results in samples from the target distributions. The Metropolis–Hastings algorithm start with an initial guess for the parameters. For each iteration a new parameters $\boldsymbol{X} \mbox{*}$ are suggested from a proposal distribution $g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^t)$, given the last accepted parameter $\boldsymbol{X}^t$. The new parameter is then evaluated against the last accepted by
+\begin{equation}
+R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})=\frac{f(\boldsymbol{X} \mbox{*})g(\boldsymbol{X}^{t}|\boldsymbol{X} \mbox{*})}{f(\boldsymbol{X}^{t})g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^{t})}
+\end{equation}
+where $f(x)$ is the target distribution, or a distribution proportional to the target distribution. The parameter $\boldsymbol{X}^{t+1}$ takes value $\boldsymbol{X}\mbox{*}$ with probability $\min\{1,R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})\}$, if rejected, $\boldsymbol{X}^{t+1}=\boldsymbol{X}^t$ instead.
+
+The Metropolis–Hastings algorithm could in situations be necessary for some of the steps in the Gibbs sampler, equation \eqref{eq:gibbs}. A combination of Metropolis-Hastings algorithm and Gibbs sampler is referred to as a Hybrid Gibbs sampler.  
+
+REFFF!!\\
+%
+%
+hybrid as in \eqref{eq:gibbs}.
+REFFF!!\\
+\subsection{Adaptive Metropolis–Hastings Algorithm}
+
+
+\subsection{Effective Sample Size}
+The realizations of the simulated Markov Chain will often be correlated, and dependent on the future and past iterations. The correlation implies that the information hold by the realizations is actually less than the numbers of realizations. The effective sample size gives a method of calculating the theoretical size of an equally informative independent and identical distributed, realization set. The effective sample size is estimated as
+\begin{equation}
+L_{eff}=\frac{L}{1+2\sum_{k=1}^{K}\hat{\rho}(k)},
+\end{equation}
+Where $L$ is the realizations of the sample size, $\hat{\rho}(k)$ is the estimated $k$ step autocorrelation between realizations and $K$ is chosen as the first $k$ where $\hat{\rho}(k)<0.1$ ref(BOK COMP STAT).
+
+\section{Applying Markov Chain Monte Carlo to Peak Over Threshold}
+The left side of equation \ref{eq:POT} can be written as %what is x,u...? described in eq:POT!
+\begin{equation}
+\Pr(X>x|X>u)=\frac{\Pr(X>x,X>u)}{\Pr(X>u)}, 
+\end{equation}
+where the nominator $\Pr(X>x,X>u)=\Pr(X>x)$, since the conditional distribution require $x>u$. Reorganizing \ref{eq:POT} gives
+\begin{equation}
+\Pr(X>x)=\Pr(X>u)\cdot \left[1+\xi \left( \frac{x-u}{\sigma}\right)\right]^{-\frac{1}{\xi}}.
+\label{eq:ConProbGev}
+\end{equation}
+%
+%
+%
+%
+%
+Usefull to have as much knowledge as possible abouth the target distribution as possible=> better simmulation ish 23\% acceptance.\\
+Prior distribution hard to choose.... future improvements!!
+%
+irreducible if its state space is a single communicating class; in other words, if it is possible to get to any state from any state. check.\\
+aperiodic if there exists n such that for all n'>n $\Pr(X_{n'}=i|X_0=i)>0$ 
+
+
+%p(X>x|X>u)=\frac{p(X>x,X>u)}{p(X>u}=\frac{p(X>x)}{p(X>u)}$ since the condition require x>u.
+
+\subsection{Multivariate Random Normal Generator}
+lkajsd yous tla blaa 
+\section{Value at Risk}
+mer bla bla
+\section{ARCH/GARCH}%????
+is this needed????

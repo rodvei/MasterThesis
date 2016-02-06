@@ -10,4 +10,33 @@ This is an example of an Appendix. You can write an Appendix in the same way as 
 \section{Introduction}
 
 %%=========================================
-\subsection{More Details}
+\subsection{R}
+\lstset{style=mystyleR}
+\begin{lstlisting}[language=R]
+#Dette er en melding 
+string<-"Heisann du"
+a=5
+for(i in 1:a){
+	print(i)
+}
+bla
+blla
+\end{lstlisting}
+
+
+
+\subsection{C++}
+\lstset{style=mystyleCpp} 
+\begin{lstlisting}[language=C++]
+#include<stdio.h>
+#include<iostream>
+// A comment
+int main(void)
+{
+  for(int i=0;i<5;i++){
+     cout<<i;
+  }
+  printf("Hello World\n");
+  return 0;
+}
+\end{lstlisting}
