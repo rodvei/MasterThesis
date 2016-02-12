@@ -9,7 +9,13 @@ blabla
 \label{ch:BayesianInference}
 
 \section{Markov Chain Monte Carlo Method}
+\label{ch:mcmc}
+%High dimentional problem (TMA4300 2014 first mcmc)
 Markov Chain Monte Carlo (MCMC) is a powerful iterative method used to sample from probability distributions, which analytically or through other simulation methods, could be difficult and impracticable to sample from. The algorithm is constructed by converging the desired probability distribution to an irreducible and aperiodic Markov Chain with limiting distribution equal the target distribution. Independent of starting position the Markov Chain will then converge towards the desired probability distribution in the limit as the numbers of iterations goes to infinity. The first numbers of realizations from the Markov Chain until converging is called the burn-in period, and is discarded for further analyses. The remaining realizations, approximately follows the desired probability distribution, where the accuracy increase as the numbers of realizations increase. Monte Carlo method can then be used to calculate the quantity of interest like mean, expected value, future prediction, credible interval etc.
+\cite[p.~201]{compstat}\\ %book
+\cite{MCMC}\\ %book
+\cite[p.220]{compstat}\\%Burn in
+
 
 \subsection{Gibbs Sampling}
 In situations where it is difficult to sample from the joint distribution, but applicable from the conditional distribution, Gibbs sampler is preferable. The principle of Gibbs sampling is to construct the Markov Chain, by repeatedly sample each parameter with the rest of the parameters as the condition. The Gibbs sampler start with an initial guess $\boldsymbol{X}^{0}=[X_1^0,\cdots, X_n^0]$ for the parameters, then iteratively update each as follows
@@ -22,33 +28,79 @@ In situations where it is difficult to sample from the joint distribution, but a
     X_n^{t+1}& \sim f(X_n|X_1^{t+1},\cdots,X_{n-1}^{t+1}).
 \end{split}
 \end{align}
-where....
+where (t,X,f and n is....)\\
 The iterative process is repeated until enough realizations are generated for sufficient accuracy.\\
 REFFF!!
-
+\cite[p.~141]{MCMC}\\
+\cite[p.~209]{compstat}\\
+\cite{GS}\\%first proposal
 \subsection{Metropolis–Hastings Algorithm}
 Metropolis–Hastings algorithm is another method for constructing a suitable Markov Chain. The algorithm is preferable for situations where a proportional distribution is simple to evaluate, while the target probability distribution is difficult. Bayesian inference (see chapter \ref{ch:BayesianInference}), often result in a distribution where the normalizing constant cannot analytically be calculated. While possible numerically, the normalizing constant often becomes computationally hard, which make it impracticable for iterative simulations. Using Metropolis–Hastings algorithm on a proportional distribution whiteout normalizing constant, results in samples from the target distributions. The Metropolis–Hastings algorithm start with an initial guess for the parameters. For each iteration a new parameters $\boldsymbol{X} \mbox{*}$ are suggested from a proposal distribution $g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^t)$, given the last accepted parameter $\boldsymbol{X}^t$. The new parameter is then evaluated against the last accepted by
 \begin{equation}
+\label{eq:MHratio}
 R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})=\frac{f(\boldsymbol{X} \mbox{*})g(\boldsymbol{X}^{t}|\boldsymbol{X} \mbox{*})}{f(\boldsymbol{X}^{t})g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^{t})}
 \end{equation}
 where $f(x)$ is the target distribution, or a distribution proportional to the target distribution. The parameter $\boldsymbol{X}^{t+1}$ takes value $\boldsymbol{X}\mbox{*}$ with probability $\min\{1,R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})\}$, if rejected, $\boldsymbol{X}^{t+1}=\boldsymbol{X}^t$ instead.
+A common proposal distribution is the random walk. The new parameters are generated from the last accepted realization with additional variance, $\boldsymbol{X}\mbox{*}= \boldsymbol{X}^{t} + \boldsymbol{\mu}$ where $\mu$ follows a chosen probability distribution. Symmetric Proposals implies that $ g(\boldsymbol{X}^{t}|\boldsymbol{X} \mbox{*}) = g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^{t})$, this is referred to as Metropolis algorithm.
 
-The Metropolis–Hastings algorithm could in situations be necessary for some of the steps in the Gibbs sampler, equation \eqref{eq:gibbs}. A combination of Metropolis-Hastings algorithm and Gibbs sampler is referred to as a Hybrid Gibbs sampler.  
+The Metropolis–Hastings algorithm could in situations be necessary for some of the steps in the Gibbs sampler, equation \eqref{eq:gibbs}. Such a combination of Metropolis-Hastings algorithm and Gibbs sampler is referred to as a Hybrid Gibbs sampler.  
 
-REFFF!!\\
+
+\cite[p.~202]{compstat}\\ %MH
+\cite[p.~216]{compstat}\\ %HG
+\cite[p.~191]{MCMC}\\ %MH
+\cite[p.~205]{MCMC}\\ %HG
+\cite{MH}\\ %MH first proposed
+\cite{HG} %HG first proposed
+
 %
 %
 hybrid as in \eqref{eq:gibbs}.
 REFFF!!\\
-\subsection{Adaptive Metropolis–Hastings Algorithm}
-
 
 \subsection{Effective Sample Size}
 The realizations of the simulated Markov Chain will often be correlated, and dependent on the future and past iterations. The correlation implies that the information hold by the realizations is actually less than the numbers of realizations. The effective sample size gives a method of calculating the theoretical size of an equally informative independent and identical distributed, realization set. The effective sample size is estimated as
 \begin{equation}
 L_{eff}=\frac{L}{1+2\sum_{k=1}^{K}\hat{\rho}(k)},
 \end{equation}
-Where $L$ is the realizations of the sample size, $\hat{\rho}(k)$ is the estimated $k$ step autocorrelation between realizations and $K$ is chosen as the first $k$ where $\hat{\rho}(k)<0.1$ ref(BOK COMP STAT).
+where $L$ is the realizations of the sample size, $\hat{\rho}(k)$ is the estimated $k$ step autocorrelation between realizations and $K$ is chosen as the first $k$ where $\hat{\rho}(k)<0.1$ ref(BOK COMP STAT).
+\cite[p.~174]{stuart}% suggested proposal distribution (naive, so room for improments)
+The effective sample size is a quantification of the information hold by the realization set.
+
+\subsection{Adaptive Metropolis Algorithm}
+A challenge with constructing a MCMC is to ensure that the series converge to the stationary target distribution relatively quickly, and that the samples gives points in the whole range of the target distribution, this is referred to as good mixing.
+
+If a large percentage of Metropolis-Hastings proposal $\boldsymbol{X}\mbox{*}$ is accepted, the proposal distribution is too narrow. High acceptance rate will delay convergence, and cause higher correlation between points. The result is poor mixing and a decrease in effective sample size.
+On the other hand, if only a small percentage of the proposals is accepted, the proposal distribution is to wide. Low acceptance rate will also increase correlation, give poos mixing and decreased effective sample size. A large number of generated realizations by the Markov chain will be equal, which will harm future Monte Carlo simulation.
+
+To maximize the effective sample size and ensure good mixing, the acceptance rate should be somewhere in between. For a Metropolis-Hastings algorithm it is suggested a $44\%$ acceptance rate for single dimensional normal target distribution and $23.4\%$ for high dimensional multivariate normal target distribution \cite{AccRate}.% 44 single 23.4 n -> inf
+Commonly the user would run the Metropolis-Hastings algorithm, calculate acceptance rate, tune variance and then rerun the process until sufficient acceptance rate is achieved. 
+
+For this paper/thesis, MCMC simulation will be used for a large number of different situations, and it would become extremely time-consuming to tune each variance. 
+The inconvenient can be handled by using an Adaptive Markov Chain Monte Carlo (AMCMC) which adapt the MCMC algorithm while running. This is achievable using a normal random walk proposal where the next suggested realization $ \boldsymbol{X}\mbox{*} \sim N ( \boldsymbol{X}^{t}, \lambda \Sigma^{t})$. 
+Between iterations $\Sigma^t$ is adjusted to improving mixing and efficient sample size. The acceptance rate is set by $\lambda$, and with a $p$ dimensional multivariate normal target distribution, it has been shown that a constant $\lambda=2.38^2/p$ is optimal when $\Sigma$ equals the real variance of the target distribution, \cite{AccRate}. The adaptive Metropolis algorithm is not constraint to the normal target distributions, but the suggested $\lambda$ seems like a good starting value. The ability of an adjustable $\lambda$ between future iteration seems beneficial, because of the unknown target distribution and the following acceptance rate.
+The additional adaptive parameter $\mu^t$ is necessary since the covariance is proportional to $\mu$. As an initial guess we use $\mu^0=\boldsymbol{0}$ and $\Sigma^0=\mathbf{I}$.
+The normal random walk proposal distribution is symmetric, which result in an adaptive Metropolis algorithm, where \eqref{eq:MHratio} is reduced to
+\begin{equation}
+\label{eq:metropolis}
+R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})=\frac{f(\boldsymbol{X} \mbox{*})}{f(\boldsymbol{X}^{t})}.
+\end{equation}
+For each iteration $\mu^{t+1}$ and $\Sigma^{t+1}$ is updated as follows
+\begin{align}
+\mu^{t+1}&=\mu^{t}+\gamma^{t+1}(\boldsymbol{X}^{t+1}-\mu^t)\\
+\Sigma^{t+1}&=\Sigma^{t}+\gamma^{t+1}[(\boldsymbol{X}^{t+1}-\mu^t)(\boldsymbol{X}^{t+1}-\mu^t)^{T}-\Sigma^{t}],
+\end{align}
+Where $\gamma$ is a decreasing parameters which provide the Markov chain property described in the beginning of chapter \ref{ch:mcmc}. The details of $\gamma^t$, to ensure an irreducible and aperiodic Markov chain can be read in \cite{550 compstat} and \cite{16 compstat}, where it is noted that $\lim_{t->\infty} \gamma^{t}=0$ while the summation, not necessary is bounded $ \sum_{t=1}^{\infty} \gamma=\infty $.
+%\gamma goes to zero
+
+
+%\lambda update done!
+
+
+
+\cite{AccRate}\\% 44 single 23.4 n -> inf
+\cite[p.~247]{compstat}
+
 
 \section{Applying Markov Chain Monte Carlo to Peak Over Threshold}
 The left side of equation \ref{eq:POT} can be written as %what is x,u...? described in eq:POT!
@@ -75,7 +127,8 @@ aperiodic if there exists n such that for all n'>n $\Pr(X_{n'}=i|X_0=i)>0$
 %p(X>x|X>u)=\frac{p(X>x,X>u)}{p(X>u}=\frac{p(X>x)}{p(X>u)}$ since the condition require x>u.
 
 \subsection{Multivariate Random Normal Generator}
-lkajsd yous tla blaa 
+lkajsd yous tla blaa
+\cite{BM}\\% BM first proposal
 \section{Value at Risk}
 mer bla bla
 \section{ARCH/GARCH}%????

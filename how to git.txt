@@ -1,0 +1,9 @@
+(git add thesis.txt) add only the file thesis.txt
+(git add -A) (git add .) add everything
+(git status) see status of files
+(git commit -m "som message") commit
+(git push) push files up to web
+(git pull) pull files to pc again
+
+
+(Esc \pause :wq) to exit

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.22)  6 FEB 2016 04:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.22)  12 FEB 2016 02:48
 entering extended mode
 **thesis.tex
 (thesis.tex
@@ -940,7 +940,7 @@ LaTeX Info: Redefining \nameref on input line 17.
 \@outlinefile=\write3
 \c@lstlisting=\count135
  (front.tex
-<fig/rams.pdf, id=86, 97.80238pt x 44.8345pt>
+<fig/rams.pdf, id=83, 97.80238pt x 44.8345pt>
 File: fig/rams.pdf Graphic file (type pdf)
  <use fig/rams.pdf>
 Package pdftex.def Info: fig/rams.pdf used on input line 8.
@@ -1004,71 +1004,172 @@ l.28 \include{chapter02Theory}
 
 ] (chapter02Theory.tex
 Chapter 1.
+
+Package natbib Warning: Citation `compstat' on page 2 undefined on input line 1
+5.
+
+
+Package natbib Warning: Citation `MCMC' on page 2 undefined on input line 16.
+
+
+Package natbib Warning: Citation `compstat' on page 2 undefined on input line 1
+7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
+
+ []
+
 [2
 
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 14.
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 38--43
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 20.
+
+
+Package natbib Warning: Citation `MCMC' on page 3 undefined on input line 34.
+
+
+Package natbib Warning: Citation `compstat' on page 3 undefined on input line 3
+5.
+
+
+Package natbib Warning: Citation `GS' on page 3 undefined on input line 36.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--37
+
+ []
+
+[3]
+
+Package natbib Warning: Citation `compstat' on page 4 undefined on input line 4
+9.
+
+
+Package natbib Warning: Citation `compstat' on page 4 undefined on input line 5
+0.
+
+
+Package natbib Warning: Citation `MCMC' on page 4 undefined on input line 51.
+
+
+Package natbib Warning: Citation `MCMC' on page 4 undefined on input line 52.
+
+
+Package natbib Warning: Citation `MH' on page 4 undefined on input line 53.
+
+
+Package natbib Warning: Citation `HG' on page 4 undefined on input line 54.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 [4]
 
-LaTeX Warning: Reference `eq:POT' on page 5 undefined on input line 54.
+Package natbib Warning: Citation `stuart' on page 5 undefined on input line 67.
 
 
-LaTeX Warning: Reference `eq:POT' on page 5 undefined on input line 58.
 
-) [5] [6] (chapter03Data.tex
+Package natbib Warning: Citation `AccRate' on page 5 undefined on input line 76
+.
+
+
+Overfull \hbox (2.16014pt too wide) in paragraph at lines 76--78
+\T1/futs/m/n/12 mul-ti-vari-ate nor-mal tar-get dis-tri-bu-tion \T1/futs/b/n/12
+ ?\T1/futs/m/n/12 .Com-monly the user would run the Metropolis-Hastings
+ []
+
+[5]
+
+Package natbib Warning: Citation `AccRate' on page 6 undefined on input line 81
+.
+
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 82.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 82.
+
+Package natbib Warning: Citation `550 compstat' on page 6 undefined on input li
+ne 93.
+
+
+Package natbib Warning: Citation `16 compstat' on page 6 undefined on input lin
+e 93.
+
+
+Package natbib Warning: Citation `AccRate' on page 6 undefined on input line 10
+2.
+
+
+Package natbib Warning: Citation `compstat' on page 6 undefined on input line 1
+03.
+
+
+LaTeX Warning: Reference `eq:POT' on page 6 undefined on input line 107.
+
+[6]
+
+LaTeX Warning: Reference `eq:POT' on page 7 undefined on input line 111.
+
+
+Package natbib Warning: Citation `BM' on page 7 undefined on input line 132.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
+
+ []
+
+) [7] (chapter03Data.tex
 Chapter 2.
-) [7
+) [8
 
 
 
-] (thesis.bbl)
+]
+No file thesis.bbl.
+
+Package natbib Warning: There were undefined citations.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
- (thesis.aux (front.aux) (preface.aux) (summary.aux)
-(chapter02Theory.aux) (chapter03Data.aux))
+(thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux)
+(chapter03Data.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 5659403A122BBA84C20B9DABD3C1CF92;1368.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: BC211FBEDD18F10916107EC54AD2B77B;1431
-(rerunfilecheck)             After:  47DBEB8C3D0B4868790983C8D1DFB4DF;1380.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
  ) 
 Here is how much of TeX's memory you used:
- 9469 strings out of 493673
- 131723 string characters out of 3141530
- 224204 words of memory out of 3000000
- 12567 multiletter control sequences out of 15000+200000
+ 9483 strings out of 493673
+ 131855 string characters out of 3141530
+ 225275 words of memory out of 3000000
+ 12579 multiletter control sequences out of 15000+200000
  83634 words of font info for 90 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  36i,15n,34p,1116b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/adobe/utopia/putri8a.pfb>
-Output written on thesis.pdf (10 pages, 116414 bytes).
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlitb.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/adobe/utopia/putri8a.pfb>
+Output written on thesis.pdf (11 pages, 131010 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

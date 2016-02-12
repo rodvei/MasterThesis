@@ -7,8 +7,8 @@
 \BOOKMARK [1][-]{section.1.4}{Markov Chain Monte Carlo Method}{chapter.1}% 7
 \BOOKMARK [2][-]{subsection.1.4.1}{Gibbs Sampling}{section.1.4}% 8
 \BOOKMARK [2][-]{subsection.1.4.2}{Metropolis\205Hastings Algorithm}{section.1.4}% 9
-\BOOKMARK [2][-]{subsection.1.4.3}{Adaptive Metropolis\205Hastings Algorithm}{section.1.4}% 10
-\BOOKMARK [2][-]{subsection.1.4.4}{Effective Sample Size}{section.1.4}% 11
+\BOOKMARK [2][-]{subsection.1.4.3}{Effective Sample Size}{section.1.4}% 10
+\BOOKMARK [2][-]{subsection.1.4.4}{Adaptive Metropolis Algorithm}{section.1.4}% 11
 \BOOKMARK [1][-]{section.1.5}{Applying Markov Chain Monte Carlo to Peak Over Threshold}{chapter.1}% 12
 \BOOKMARK [2][-]{subsection.1.5.1}{Multivariate Random Normal Generator}{section.1.5}% 13
 \BOOKMARK [1][-]{section.1.6}{Value at Risk}{chapter.1}% 14

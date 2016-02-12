@@ -6,15 +6,15 @@
 \contentsline {section}{\numberline {1.3}Bayesian Inference}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Markov Chain Monte Carlo Method}{2}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Gibbs Sampling}{3}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Metropolis\IeC {\textendash }Hastings Algorithm}{3}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Adaptive Metropolis\IeC {\textendash }Hastings Algorithm}{4}{subsection.1.4.3}
-\contentsline {subsection}{\numberline {1.4.4}Effective Sample Size}{4}{subsection.1.4.4}
-\contentsline {section}{\numberline {1.5}Applying Markov Chain Monte Carlo to Peak Over Threshold}{5}{section.1.5}
-\contentsline {subsection}{\numberline {1.5.1}Multivariate Random Normal Generator}{5}{subsection.1.5.1}
-\contentsline {section}{\numberline {1.6}Value at Risk}{5}{section.1.6}
-\contentsline {section}{\numberline {1.7}ARCH/GARCH}{6}{section.1.7}
-\contentsline {chapter}{\numberline {2}Data}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Synthetic Data}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Pareto}{7}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Commodity Generated Data}{7}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Commodity Data}{7}{section.2.2}
+\contentsline {subsection}{\numberline {1.4.2}Metropolis\IeC {\textendash }Hastings Algorithm}{4}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Effective Sample Size}{5}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Adaptive Metropolis Algorithm}{5}{subsection.1.4.4}
+\contentsline {section}{\numberline {1.5}Applying Markov Chain Monte Carlo to Peak Over Threshold}{7}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Multivariate Random Normal Generator}{7}{subsection.1.5.1}
+\contentsline {section}{\numberline {1.6}Value at Risk}{7}{section.1.6}
+\contentsline {section}{\numberline {1.7}ARCH/GARCH}{7}{section.1.7}
+\contentsline {chapter}{\numberline {2}Data}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Synthetic Data}{8}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Pareto}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Commodity Generated Data}{8}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Commodity Data}{8}{section.2.2}

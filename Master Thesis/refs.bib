@@ -7,29 +7,59 @@
 
 %% Saved with string encoding Unicode (UTF-8) 
 
-@book{Stuart,
-author = {Stuart Coles},
-title = {An Introduction to Statistical Modeling of Extreme Values},
-publisher = {Springer},
-year = {2001},
+
+
+% Extremverdi boka
+@book{stuart,
+	author = {Coles, Stuart},
+	title = {An Introduction to Statistical Modeling of Extreme Values},
+	publisher = {Springer},
+	year = {2001},
 }
 
+% Boka i TMA4300
 @book{compstat,
-	author={Givens H., Geof and Hoeting A., Jennifer},
+	author={Givens, Geof H. and Hoeting, Jennifer  A.},
 	title={Computational Statistics},
 	publisher={John & Sons},
 	edition  ={2nd},
 	year={2013},
 }
 
+% Extra boka i TMA4300
 @book{MCMC,
-	author={Gamerman, Dani and Lopes Freitas, Hedibert},
+	author={Gamerman, Dani and Lopes, Hedibert Freitas},
 	title={Markov Chain Monte Carlo: Stochastic Simulation for Bayesian Inference},
 	publisher={Champman & Hall/CRC},
 	edition={2nd},
 	year={2006},
 }
 
+% Foerste Metropolis hastings algorithm
+@article{MH,
+	author={Metropolis, Nicholas and Rosenbluth, Arianna W. and Rosenbluth, Marshal N. and Teller, Augusta  H. and Teller, Edward },
+	title={Equation of state calculations by fast computing machines},
+	journal={The Journal of Chemical Physics},
+	year={1953 },
+}
+
+% gammel Gibbs sampler
+@article{GS,
+	author={Geman,S. and Geman, D.},
+	title={Stochastic Relaxation, Gibbs Distributions, and the Bayesian Restoration of Images},
+	journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	year={1984},
+}
+
+% Box muller trans (unif to normal)
+@article{BM,
+	author={Box, G. E. P. and Muller, Mervin E.},
+	title={A note on the generation of random normal deviates},
+	journal={The Annals of Mathematical Statistics},
+	year={1958},
+}
+
+% Arvid ACER
 @article{arvid,
 	author={N\{ae}ss,Arvid and Gaidai, Oleg and Karpa, Oleh},
 	title={Estimation of Extreme Value by the Average Conditional Exceedance Rate Method},
@@ -37,13 +67,31 @@ year = {2001},
 	year={2013},
 }
 
+% Norpool ACER vs POT
 @article{kai,
-	author={Dahlen, Kai Erik and Solibakke Bjarte, Per and Westgaard, Sjur and N\{ae}ss, Arvid},
+	author={Dahlen, Kai Erik and Solibakke, Per Bjarte and Westgaard, Sjur and N\{ae}ss, Arvid},
 	title={On the Estimation of Extreme Values for Risk Assessment and Management: The ACER Method},
 	journal={International Journal of Business},
 	year{2015}
 }
 
+% Optimal accaptance rate
+@inproceedings {AccRate,
+	author={Gelman, A. and Roberts, G. O. and Gilks, W. R. },
+	title={Efficient Metropolis Jumping Rules},
+	booktitle={Bayesian Statistics 5},
+	year={1996 },
+}
+
+% Hybgid gibbs (gibbs + MH)
+@techreport{HG,
+    author    = M{\"u}ller, P.},
+    title     = {A generic approach to posterior integration and Gibbs sampling},
+    institution = {Department of Statistics, Purdue University},
+    year      = {1991 },
+}
+
+% R program ref
 @Manual{r,
     title = {R: A Language and Environment for Statistical Computing},
     author = {{R Core Team}},
@@ -54,6 +102,7 @@ year = {2001},
     url = {http://www.R-project.org/},
 }
 
+% R pakke Rcpp ref
 @Manual{rcpp,
     title = {Rcpp: Seamless R and C++ Integration},
     author = {Eddelbuettel, Dirk and Francois, Romain and Allaire, JJ and Ushey, Kevin and Kou, Qiang and Bates, Douglas and  Chambers, John},
@@ -61,6 +110,7 @@ year = {2001},
     url = {https://cran.r-project.org/web/packages/Rcpp/index.html},
 }
 
+%Matlab program ACER ref
 @misc{Matlab,
   author = {Oleh Karpa},
   title = {{ACER MATLAB routine}},
@@ -68,8 +118,9 @@ year = {2001},
   year = {2012}
 }
 
+% min prosjektoppgave ref
 @unpublished{racer,
-	author	= {Roedvei Kofoed, Kristoffer},
+	author= {Roedvei, Kristoffer Kofoed},
 	title	= {ACER R Packaged},
 	year	= {2015},
 	note	= {unpublished},
