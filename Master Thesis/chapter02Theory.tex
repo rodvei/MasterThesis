@@ -1,12 +1,172 @@
 \chapter[Theory]{Theory}
 This chapter gives an introduction of/to the theory behind this thesis/paper. Some of the following sections only give a brief description of the theory whit sources for more in depth explanation. The main focus of this chapter is describing the theory behind the Markov chain Mote Carlo method for solving extreme value problem developed for this paper. 
 \section{Extreme value theory}
-peak over threshold..
+The basics of extreme value theory is to analyze
+\begin{equation}
+M_n=\max\{X_1,\dots,X_n\}.
+\end{equation}
+It is assumed that $X_1,\dots,X_n$ are independent and identically distributed (i.i.d) random variables with common cumulative distribution function $F$.
+The exact distribution of $M_n$ then follows
+\begin{align}
+\begin{split}
+    \Pr(M_n \leq z)&=\Pr(X_1 \leq z,\dots, X_n \leq z)\\
+    &=\Pr(X_1 \leq z)\times \dots \times \Pr(X_n \leq z)\\
+    &=\big[F(z)\big]^n.   
+\end{split}
+\end{align}
+The distributing $F$ is normally unknown, and a divergent in the estimated distributing $F$ could potentially escalate to a large difference in the resulting $F^n$. 
+
+As for the central limit theory for normal distribution, $F^n$ also has a limiting distribution, by The Fisher–Tippett–Gnedenko theorem. If there exist an $a_n>0$ and $b_n$ such that 
+\begin{equation}
+\lim_{n \to \infty} \Pr\big[(M_n-b_n)/a_n \leq z\big]\to G(z),
+\end{equation}
+where $G$ is a non-degenerating function, then $G$ follows either
+%\begin{align}
+%G(z) &=\exp\Big\{-\exp\Big[-\Big( \frac{z-b}{a}\Big) \Big]\Big\}, & \quad -\infty < z < \infty;\label{eq:gumbel}\\
+%G(z) &=
+%  \begin{cases}
+%    0, & \quad z\leq b,\\
+%    \exp\big\{-\big(\frac{z-b}{a} \big)^{-\alpha} \big\},  & \quad z>b;\\
+%  \end{cases} \label{eq:frechet}\\
+%G(z) &=
+%  \begin{cases}
+%    \exp\Big\{-\Big[-\Big( \frac{z-b}{a}\Big) \Big]^{\alpha}\Big\}, & \quad z\leq b,\\
+%    1,  & \quad z>b;\\
+%  \end{cases} \label{eq:weibull}\\
+%\end{align}
+
+\begin{align}
+G(z) &=\exp\Big\{-\exp\Big[-\Big( \frac{z-b}{a}\Big) \Big]\Big\},  & -\infty < z < \infty;\label{eq:gumbel}\\
+G(z) &=
+  \begin{cases}
+    0,\\
+    \exp\big\{-\big(\frac{z-b}{a} \big)^{-\alpha} \big\},  
+  \end{cases}
+ \begin{split}
+   &z\leq b, \\
+   &z >b;\label{eq:frechet}\\
+  \end{split}\\
+G(z) &=
+  \begin{cases}
+    \exp\Big\{-\Big[-\Big( \frac{z-b}{a}\Big) \Big]^{\alpha}\Big\}, \\
+    1,  
+  \end{cases}  
+ \begin{split}
+   &z \leq b,\\
+   &z>b;\label{eq:weibull}
+  \end{split}
+\end{align}
+for each case, $\alpha>0$. Here equation \eqref{eq:gumbel}, \eqref{eq:frechet} and \eqref{eq:weibull} refears to Gumbel, Fr{\'e}chet and Weibull distribution respectively. The above equation can be combined into the General Extreme Value (GEV) distribution
+\begin{equation}
+G(z)=\exp\Bigg\{-\Big[1+\xi \Big(\frac{z-\mu}{\sigma} \Big) \Big]^{-\frac{1}{\xi}} \Bigg\}
+\end{equation}
+where $1+\xi(z-\mu)/\sigma>0$, the location parameter is $-\infty<\mu<\infty$, the scale parameter is $\sigma>0$ and the shape parameter is $-\infty<\xi<\infty$. It can easily be verified that the GEV equals \eqref{eq:frechet} when $\xi>0$, \eqref{eq:weibull} when $\xi<0$ and converge towards \eqref{eq:gumbel} as $z \to 0$.
+
+The GEV model requires i.i.d data points for parameter estimations. Unfortunately, in practice this is rarely the case. Block maxima or r largest order statistics are common methods for converging the dependent data points into an approximate i.i.d dataset \cite[Chapter~3]{stuart}. The basic principle is to only use the largest, or r largest data within each block. An example of a block could be week, month, year etc.
+
+For a deeper description of extreme value theory, GEV or block maxima, the book of \cite{stuart} is suggested.
+
+\subsection{Peak Over Threshold} 
+One of the problem with the GEV method and the filtering of i.i.d data points, is that the block maxima and r largest order statistics are quite wasteful. Specially in situations where some blocks contains more extreme than others, large extreme will be discarded from the set, which else would have been accepted in other blocks.
+
+The Peak Over Threshold (POT) method is suggesting a different method of tackling the i.i.d issue. Filtering the data, by only using points over a certain threshold $u$, avoid the problem of discarding large extremes in certain blocks. As long as $u$ is chosen sufficiently large, the resulting data will be i.i.d. Using the GEV distribution it can be shown, like was done by \cite[p.~76]{stuart}, that 
+\begin{equation}
+\label{eq:potCond}
+\Pr(X>y+u|X>u)=\Big(1+\frac{\xi y}{\tilde{\sigma}}\Big)^{-\frac{1}{\xi}}
+\end{equation}
+Which result in the distribution of $y$
+\begin{equation}
+\label{eq:potwxi}
+H(y)=1-\Big(1+\frac{\xi y}{\tilde{\sigma}}\Big)^{-\frac{1}{\xi}}
+\end{equation}  
+or
+\begin{equation}
+\label{eq:potwoxi}
+H(y)=1-\exp\Big(-\frac{y}{\tilde{\sigma}}\Big)
+\end{equation}
+when $\xi \to 0$. Here $\xi$ equal the GEV model, while $\tilde{\sigma}=\sigma+\xi(u-\mu)$. Since the requirement $\tilde{\sigma}>0$ still holds, for simplicity, the notation $\sigma$ is used from here.   
+
+The conditional probability
+\begin{equation}
+\label{eq:potPredBetween}
+\Pr(X>y+u|X>u)=\frac{\Pr(X>y+u)}{\Pr(X>u)}, 
+\end{equation}
+since $y+u \geq u$, the probability $\Pr(X>y+u, X>u)=\Pr(X>y+u)$.
+By combining equation \eqref{eq:potCond} and \eqref{eq:potPredBetween}, the probability of a future event can be found by
+\begin{align}
+\Pr(X>z)&=\Pr(X>y+u) \nonumber\\
+ 		&=\Pr(X>u) \cdot P(X>y+u|X>u)\nonumber\\
+ 		&=\Pr(X>u) \cdot \left[1+\xi \left( \frac{z-u}{\sigma}\right)\right]^{-\frac{1}{\xi}}, \label{eq:potPred}
+\end{align}
+where $\Pr(X>u)$ is the probability that a random point exceeds the threshold.
+
+\subsubsection{Threshold}
+HOW TO FIND THRESHOLD
+
 \section{Average Condition Exceedance Rate}
-blabla
+MORE blabla
 
 \section{Bayesian Inference}
 \label{ch:BayesianInference}
+For the traditional frequentist statistics, the parameters $\boldsymbol{\theta}$ are assumed fixed, while data $x_1,\dotsc ,x_n$ are random from the underlying distribution $f(\boldsymbol{x}| \boldsymbol{\theta})$. Bayesian statistics, instead treats the parameters $\boldsymbol{\theta}$ with a probability distribution, where it is possible to make subjective believes about the distribution, independent of the data. These subjective beliefs is used to construct a prior distribution $f(\boldsymbol{\theta})$ based on experiences, information or physical knowledge of the situation analyzed. 
+
+The posterior distribution of the parameters dependent on the measured data becomes 
+\begin{equation}
+f(\boldsymbol{\theta}|\boldsymbol{x})=\frac{f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta})}{\int_{\Theta} f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta}) \mathrm{d} \theta}, 
+\end{equation}
+where $\Theta$ is the domain over all possible parameters, for which the integral is taken, and  $f(\boldsymbol{x}|\boldsymbol{\theta})$ is the likelihood function. The likelihood function is constructed from the joint density function, which for independent data equals
+\begin{equation}
+\label{eq:jointdens}
+f(\boldsymbol{x}|\boldsymbol{\theta})=\prod_{i=1}^{n} f(x_i|\boldsymbol{\theta}).
+\end{equation}
+The integral over parameters reduces to a constant, which makes
+\begin{equation}
+f(\boldsymbol{\theta}|\boldsymbol{x}) \sim c \cdot f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta}), \label{eq:genposteriorc}
+\end{equation}
+where $c=1/ \int_{\Theta} f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta}) \mathrm{d} \theta$ is the normalizing constant.
+
+A conjugate prior is a prior which combined with the likelihood function construct a posterior distribution in the same family as the prior.  Conjugate priors are often preferred because of the analytical luxury and computational simplicity.\\
+
+Since Bayesian inference accounts for the distribution of parameter, equation \eqref{eq:potPred} can be rewritten using $\Pr(X>u)=\alpha$
+\begin{equation}
+\Pr(X>z)=\alpha \left[1+\xi \left( \frac{z-u}{\sigma}\right)\right]^{-\frac{1}{\xi}},
+\end{equation}
+where $\alpha$, $\xi$ and $\sigma$ are the unknown parameters. Since $\alpha$ is the probability of a point being larger than the threshold, $\alpha$ is independent of $\xi$ and $\sigma$. For the independent parameters, development of the posterior distributions can be treated separately. 
+
+Starting with $\xi$ and $\sigma$, by combining equation \eqref{eq:jointdens} and \eqref{eq:potwxi}, the joint density function for the POT method becomes
+\begin{align}
+f(\boldsymbol{y}|\xi,\sigma)&=\prod_{i=1}^{k} h(y_i|\xi,\sigma)\nonumber\\
+&=\sigma^{-k} \prod_{i=1}^{k}\left( 1+\frac{\xi y_i}{\sigma}\right)^{-\left(1+\frac{1}{\xi}\right)}, \label{eq:jointdenspot}
+\end{align}
+or by \eqref{eq:potwoxi}, $f(\boldsymbol{y}|\sigma)=\sigma^{-k}\exp\left\{-\frac{1}{\sigma} \sum_{i=1}^{k}y_i \right\}$ when $\xi=0$. 
+
+The obvious beginning for investigating priors is the conjugate priors, but unfortunately, there do not appear to be any conjugate priors for the joint POT probability distribution. This paper will not go into depth on how to select Bayesian priors for the POT method, but instead use the suggestion proposed by \cite[p.~174]{stuart}. Note that there are potential improvements by deeper investigation of POT/GEV priors, especially for priors developed for specific situations where there are physical knowledge or practical experiences about the parameters. Since $\sigma>0$, the transformation $\phi=\log(\sigma)$ ensures $\sigma$ to be valid without restriction on $\phi$. The suggested priors are $f_{\phi}(\cdot)$ and $f_{\xi}(\cdot)$ to be normally distributed around zero with variance $v_{\phi}=10^4$ and $v_{\xi}=100$. 
+
+Considering the prior distribution of $\phi$ instead of $\sigma$, the change of variable for the joint density function becomes 
+\begin{align}
+f_{\boldsymbol{y}|\xi,\phi}(\boldsymbol{y}|\xi,\phi)&=\frac{f_{\boldsymbol{y},\xi,\phi}(\boldsymbol{y},\xi,\phi)}{f_{\xi,\phi}(\xi,\phi)}\nonumber\\
+&=\frac{f_{\boldsymbol{y},\xi,\sigma}\left(\boldsymbol{y},\xi,\exp(\phi)\right)\cdot \left|\frac{\mathrm d}{\mathrm d \phi} \exp(\phi)\right|}{f_{\xi,\sigma}\left(\xi,\exp(\phi)\right)\cdot \left|\frac{\mathrm d}{\mathrm d \phi} \exp(\phi)\right|}\nonumber\\
+&=f_{\boldsymbol{y}|\xi,\sigma}\left(\boldsymbol{y}|\xi,\exp(\phi)\right). \label{eq:jointdenschang}
+\end{align}
+The posterior distribution of the parameters can then be developed by the priors, \eqref{eq:jointdenschang} and \eqref{eq:genposteriorc}
+\begin{align}
+f_{\xi,\phi|\boldsymbol{y}}(\xi,\phi|\boldsymbol{y})\sim c \cdot f_{\boldsymbol{y}|\xi,\sigma}\left(\boldsymbol{y}|\xi,\exp(\phi)\right)f_{\xi}(\xi)f_{\phi}(\phi), \label{eq:potpost}
+\end{align}
+where again c is the normalizing constant, $f_{\boldsymbol{y}|\xi,\sigma}$ is as in \eqref{eq:jointdenspot}, $f_{\xi}(\xi)\sim N(0,100)$ and $f_{\phi}(\phi) \sim N(0,10^4)$.
+
+The development of $\alpha$ posterior distribution, can be started with investigating priors. Since $\alpha$ simply equals $\Pr(X>u)$, the range is limited between $0$ and $1$. For simplicity the prior is set to $f(\alpha) \sim UNIF(0,1)$. It is noted that the distribution of $\alpha$ in reality is not flat. Low valued $\alpha$ is more probably then high, while the probability converges to zero for the endpoints. A well-tuned Beta distributed prior could account for this, and improve the result.
+
+The joint density function can be created by the fact that $\alpha$ simply equals the probability of a random point exceeding the threshold. This can be expressed using the binominal distribution, using $k_i$ for the numbers of points exceeding the threshold and $N_i$ for the total numbers of point, each for a given period $i$. For a total $n$ numbers of periods, the posterior distribution equals
+\begin{align}
+f(\alpha|k_1,\dotsc,k_n, N_1, \dotsc, N_n)&\sim f(\alpha)\cdot \prod_{i=1}^{n} f(k_i|N_i,\alpha)\nonumber\\
+&=\prod_{i=1}^{n} \binom{N_i}{k_i} \alpha^{k_i}(1-\alpha)^{N_i-k_i}\nonumber\\
+& \sim \alpha^{\sum_{i=1}^{n}k_i}(1-\alpha)^{\sum_{i=1}^{n}N_i-\sum_{i=1}^{n}k_i}.\label{eq:alphaposttemp}
+\end{align}
+The resulting distribution is independent of period selection, the notation $k$ and $N$ can be used for the total numbers of exceedance and the total numbers of measurements respectively. It is noted that the distribution is proportional to the Beta distribution. Since there only exist one normalizing constant which fulfills the requirements for a probability distribution, the posterior distribution is not only proportional, but equal to the Beta distribution. Rewriting equation \eqref{eq:alphaposttemp} gives
+\begin{equation}
+\label{eq:alphapost}
+f(\alpha|k,N) \sim BETA(k+1,N-k+1).
+\end{equation}
 
 \section{Markov Chain Monte Carlo Method}
 \label{ch:mcmc}
@@ -22,10 +182,10 @@ In situations where it is difficult to sample from the joint distribution, but a
 \begin{align}
 \label{eq:gibbs}
 \begin{split}
-    X_1^{t+1}& \sim f(X_1|X_2^{t},\cdots,X_n^{t}),\\
-    X_2^{t+1}& \sim f(X_2|X_1^{t+1},X_3^{t},\cdots,X_n^{t}),\\
+    X_1^{t+1}& \sim f(X_1|X_2^{t},\dotsc,X_n^{t}),\\
+    X_2^{t+1}& \sim f(X_2|X_1^{t+1},X_3^{t},\dotsc,X_n^{t}),\\
     \vdots \\
-    X_n^{t+1}& \sim f(X_n|X_1^{t+1},\cdots,X_{n-1}^{t+1}).
+    X_n^{t+1}& \sim f(X_n|X_1^{t+1},\dotsc,X_{n-1}^{t+1}).
 \end{split}
 \end{align}
 where (t,X,f and n is....)\\
@@ -35,13 +195,16 @@ REFFF!!
 \cite[p.~209]{compstat}\\
 \cite{GS}\\%first proposal
 \subsection{Metropolis–Hastings Algorithm}
-Metropolis–Hastings algorithm is another method for constructing a suitable Markov Chain. The algorithm is preferable for situations where a proportional distribution is simple to evaluate, while the target probability distribution is difficult. Bayesian inference (see chapter \ref{ch:BayesianInference}), often result in a distribution where the normalizing constant cannot analytically be calculated. While possible numerically, the normalizing constant often becomes computationally hard, which make it impracticable for iterative simulations. Using Metropolis–Hastings algorithm on a proportional distribution whiteout normalizing constant, results in samples from the target distributions. The Metropolis–Hastings algorithm start with an initial guess for the parameters. For each iteration a new parameters $\boldsymbol{X} \mbox{*}$ are suggested from a proposal distribution $g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^t)$, given the last accepted parameter $\boldsymbol{X}^t$. The new parameter is then evaluated against the last accepted by
+Metropolis–Hastings algorithm is another method for constructing a suitable Markov Chain. The algorithm is preferable for situations where a proportional distribution is simple to evaluate, while the target probability distribution is difficult. Bayesian inference (see chapter \ref{ch:BayesianInference}), often result in a distribution where the normalizing constant cannot analytically be calculated. While possible numerically, the normalizing constant often becomes computationally hard, which make it impracticable for iterative simulations. Using Metropolis–Hastings algorithm on a proportional distribution whiteout normalizing constant, results in samples from the target distributions. 
+
+The Metropolis–Hastings algorithm start with an initial guess for the parameters. For each iteration a new parameters $\boldsymbol{X} \mbox{*}$ are suggested from a proposal distribution $g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^t)$, given the last accepted parameter $\boldsymbol{X}^t$. The new parameter is then evaluated against the last accepted by
 \begin{equation}
 \label{eq:MHratio}
 R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})=\frac{f(\boldsymbol{X} \mbox{*})g(\boldsymbol{X}^{t}|\boldsymbol{X} \mbox{*})}{f(\boldsymbol{X}^{t})g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^{t})}
 \end{equation}
-where $f(x)$ is the target distribution, or a distribution proportional to the target distribution. The parameter $\boldsymbol{X}^{t+1}$ takes value $\boldsymbol{X}\mbox{*}$ with probability $\min\{1,R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})\}$, if rejected, $\boldsymbol{X}^{t+1}=\boldsymbol{X}^t$ instead.
-A common proposal distribution is the random walk. The new parameters are generated from the last accepted realization with additional variance, $\boldsymbol{X}\mbox{*}= \boldsymbol{X}^{t} + \boldsymbol{\mu}$ where $\mu$ follows a chosen probability distribution. Symmetric Proposals implies that $ g(\boldsymbol{X}^{t}|\boldsymbol{X} \mbox{*}) = g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^{t})$, this is referred to as Metropolis algorithm.
+where $f(x)$ is the target distribution, or a distribution proportional to the target distribution. The parameter $\boldsymbol{X}^{t+1}$ takes value $\boldsymbol{X}\mbox{*}$ with probability $\min\{1,R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})\}$, if rejected, $\boldsymbol{X}^{t+1}=\boldsymbol{X}^t$ instead. The reason the target distribution normalizing constant is irrelevant, is because they are both canceled out in $f(\boldsymbol{X} \mbox{*})/f(\boldsymbol{X}^{t})$.
+
+A common proposal distribution is the random walk. The new parameters are generated from the last accepted realization with additional variance, $\boldsymbol{X}\mbox{*}= \boldsymbol{X}^{t} + \boldsymbol{\epsilon}$ where $\boldsymbol{\epsilon}$ follows a chosen probability distribution. Symmetric Proposals implies that $ g(\boldsymbol{X}^{t}|\boldsymbol{X} \mbox{*}) = g(\boldsymbol{X} \mbox{*}|\boldsymbol{X}^{t})$, this is referred to as Metropolis algorithm.
 
 The Metropolis–Hastings algorithm could in situations be necessary for some of the steps in the Gibbs sampler, equation \eqref{eq:gibbs}. Such a combination of Metropolis-Hastings algorithm and Gibbs sampler is referred to as a Hybrid Gibbs sampler.  
 
@@ -73,13 +236,13 @@ A challenge with constructing a MCMC is to ensure that the series converge to th
 If a large percentage of Metropolis-Hastings proposal $\boldsymbol{X}\mbox{*}$ is accepted, the proposal distribution is too narrow. High acceptance rate will delay convergence, and cause higher correlation between points. The result is poor mixing and a decrease in effective sample size.
 On the other hand, if only a small percentage of the proposals is accepted, the proposal distribution is to wide. Low acceptance rate will also increase correlation, give poos mixing and decreased effective sample size. A large number of generated realizations by the Markov chain will be equal, which will harm future Monte Carlo simulation.
 
-To maximize the effective sample size and ensure good mixing, the acceptance rate should be somewhere in between. For a Metropolis-Hastings algorithm it is suggested a $44\%$ acceptance rate for single dimensional normal target distribution and $23.4\%$ for high dimensional multivariate normal target distribution \cite{AccRate}.% 44 single 23.4 n -> inf
+To maximize the effective sample size and ensure good mixing, the acceptance rate should be somewhere in between. For a Metropolis-Hastings algorithm it is suggested a $44\%$ acceptance rate for single dimensional normal target distribution and $23.4\%$ for high dimensional multivariate normal target distribution \cite{AccRate}. % 44 single 23.4 n -> inf
 Commonly the user would run the Metropolis-Hastings algorithm, calculate acceptance rate, tune variance and then rerun the process until sufficient acceptance rate is achieved. 
 
 For this paper/thesis, MCMC simulation will be used for a large number of different situations, and it would become extremely time-consuming to tune each variance. 
 The inconvenient can be handled by using an Adaptive Markov Chain Monte Carlo (AMCMC) which adapt the MCMC algorithm while running. This is achievable using a normal random walk proposal where the next suggested realization $ \boldsymbol{X}\mbox{*} \sim N ( \boldsymbol{X}^{t}, \lambda \Sigma^{t})$. 
 Between iterations $\Sigma^t$ is adjusted to improving mixing and efficient sample size. The acceptance rate is set by $\lambda$, and with a $p$ dimensional multivariate normal target distribution, it has been shown that a constant $\lambda=2.38^2/p$ is optimal when $\Sigma$ equals the real variance of the target distribution, \cite{AccRate}. The adaptive Metropolis algorithm is not constraint to the normal target distributions, but the suggested $\lambda$ seems like a good starting value. The ability of an adjustable $\lambda$ between future iteration seems beneficial, because of the unknown target distribution and the following acceptance rate.
-The additional adaptive parameter $\mu^t$ is necessary since the covariance is proportional to $\mu$. As an initial guess we use $\mu^0=\boldsymbol{0}$ and $\Sigma^0=\mathbf{I}$.
+The additional adaptive parameter $\mu^t$ is necessary since the covariance is proportional to $\mu$. The initial guess is chosen as $\mu^0=\boldsymbol{0}$ and $\Sigma^0=\mathbf{I}$.
 The normal random walk proposal distribution is symmetric, which result in an adaptive Metropolis algorithm, where \eqref{eq:MHratio} is reduced to
 \begin{equation}
 \label{eq:metropolis}
@@ -88,13 +251,18 @@ R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t})=\frac{f(\boldsymbol{X} \mbox{*})}{
 For each iteration $\mu^{t+1}$ and $\Sigma^{t+1}$ is updated as follows
 \begin{align}
 \mu^{t+1}&=\mu^{t}+\gamma^{t+1}(\boldsymbol{X}^{t+1}-\mu^t)\\
-\Sigma^{t+1}&=\Sigma^{t}+\gamma^{t+1}[(\boldsymbol{X}^{t+1}-\mu^t)(\boldsymbol{X}^{t+1}-\mu^t)^{T}-\Sigma^{t}],
+\Sigma^{t+1}&=\Sigma^{t}+\gamma^{t+1}\left[(\boldsymbol{X}^{t+1}-\mu^t)(\boldsymbol{X}^{t+1}-\mu^t)^{T}-\Sigma^{t}\right],
 \end{align}
-Where $\gamma$ is a decreasing parameters which provide the Markov chain property described in the beginning of chapter \ref{ch:mcmc}. The details of $\gamma^t$, to ensure an irreducible and aperiodic Markov chain can be read in \cite{550 compstat} and \cite{16 compstat}, where it is noted that $\lim_{t->\infty} \gamma^{t}=0$ while the summation, not necessary is bounded $ \sum_{t=1}^{\infty} \gamma=\infty $.
-%\gamma goes to zero
+Where $\gamma$ is a decreasing parameters which provide the Markov chain property described in the beginning of chapter \ref{ch:mcmc}. The details of $\gamma^t$, to ensure an irreducible and aperiodic Markov chain can be read in \cite{compstat550} 
+and \cite{compstat16}
+, where it is noted that $\lim_{t->\infty} \gamma^{t}=0$ while the summation, not necessary is bounded $ \sum_{t=1}^{\infty} \gamma=\infty $. 
+Repeated trails concluded that $\gamma^t=\cdots$ was sufficient choice. %maybe in applying??? \gamma = 0.5*exp(-(i + nstart) / tau) oppgrader
 
-
-%\lambda update done!
+As described above an adaptive $\lambda^t$ could be beneficial. By using
+\begin{equation}
+\log(\lambda^{t+1})=\log( \lambda^{t} ) + \gamma^{t+1} \left( R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t}) -a \right),
+\end{equation}
+the series acceptance rate will converge towards $a$ \cite[p.~248]{compstat}.
 
 
 
@@ -102,7 +270,10 @@ Where $\gamma$ is a decreasing parameters which provide the Markov chain propert
 \cite[p.~247]{compstat}
 
 
-\section{Applying Markov Chain Monte Carlo to Peak Over Threshold}
+\subsection{Applying Markov Chain Monte Carlo to Peak Over Threshold}
+For the POT method..
+\eqref{eq:potPred} something something somehting SKRIV HER
+
 The left side of equation \ref{eq:POT} can be written as %what is x,u...? described in eq:POT!
 \begin{equation}
 \Pr(X>x|X>u)=\frac{\Pr(X>x,X>u)}{\Pr(X>u)}, 
@@ -117,11 +288,12 @@ where the nominator $\Pr(X>x,X>u)=\Pr(X>x)$, since the conditional distribution 
 %
 %
 %
-Usefull to have as much knowledge as possible abouth the target distribution as possible=> better simmulation ish 23\% acceptance.\\
-Prior distribution hard to choose.... future improvements!!
-%
 irreducible if its state space is a single communicating class; in other words, if it is possible to get to any state from any state. check.\\
 aperiodic if there exists n such that for all n'>n $\Pr(X_{n'}=i|X_0=i)>0$ 
+%
+%
+Usefull to have as much knowledge as possible abouth the target distribution as possible=> better simmulation ish 23\% acceptance.\\
+Prior distribution hard to choose.... future improvements!!
 
 
 %p(X>x|X>u)=\frac{p(X>x,X>u)}{p(X>u}=\frac{p(X>x)}{p(X>u)}$ since the condition require x>u.

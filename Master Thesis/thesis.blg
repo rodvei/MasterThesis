@@ -1,0 +1,24 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: front.aux
+A level-1 auxiliary file: preface.aux
+A level-1 auxiliary file: summary.aux
+A level-1 auxiliary file: chapter02Theory.aux
+A level-1 auxiliary file: chapter03Data.aux
+The style file: apa.bst
+Database file #1: refs.bib
+You're missing a field name---line 133 of file refs.bib
+ : 
+ : % Address = {Hoboken, NJ},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 142 of file refs.bib
+ : 
+ : % Author = {Lundteigen, Mary Ann and Rausand, Marvin},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 152 of file refs.bib
+ : 
+ : % Address = {Hoboken, NJ},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+(There were 3 error messages)

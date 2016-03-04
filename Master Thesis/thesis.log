@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.22)  12 FEB 2016 02:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.22)  4 MAR 2016 08:54
 entering extended mode
 **thesis.tex
 (thesis.tex
@@ -823,53 +823,53 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 142.
 ))
 (thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux)
-(chapter03Data.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 17.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 17.
+(chapter03Data.aux) (chapter0nConclution.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 18.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 18.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmlfutm.fd"
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 18.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmsfutm.fd"
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 18.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmxfutm.fd"
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 18.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\t1futs.fd"
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -923,7 +923,7 @@ File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 17.
+Package hyperref Info: Link coloring ON on input line 18.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -932,15 +932,15 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (thesis.out) (thesis.out)
 \@outlinefile=\write3
 \c@lstlisting=\count135
  (front.tex
-<fig/rams.pdf, id=83, 97.80238pt x 44.8345pt>
+<fig/rams.pdf, id=106, 97.80238pt x 44.8345pt>
 File: fig/rams.pdf Graphic file (type pdf)
  <use fig/rams.pdf>
 Package pdftex.def Info: fig/rams.pdf used on input line 8.
@@ -970,7 +970,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--14
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 24.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 25.
  (thesis.toc
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 1.
 
@@ -992,184 +992,146 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 1.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 3.
-)
+ [3
+
+
+])
 \tf@toc=\write4
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 \include{chapter02Theory}
-                               [1
-
-
-] (chapter02Theory.tex
+l.29 \include{chapter02Theory}
+                               [1] (chapter02Theory.tex
 Chapter 1.
-
-Package natbib Warning: Citation `compstat' on page 2 undefined on input line 1
-5.
-
-
-Package natbib Warning: Citation `MCMC' on page 2 undefined on input line 16.
-
-
-Package natbib Warning: Citation `compstat' on page 2 undefined on input line 1
-7.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
-
- []
-
 [2
 
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 20.
-
-
-Package natbib Warning: Citation `MCMC' on page 3 undefined on input line 34.
-
-
-Package natbib Warning: Citation `compstat' on page 3 undefined on input line 3
-5.
-
-
-Package natbib Warning: Citation `GS' on page 3 undefined on input line 36.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--37
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 69.
+ [3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-[3]
-
-Package natbib Warning: Citation `compstat' on page 4 undefined on input line 4
-9.
-
-
-Package natbib Warning: Citation `compstat' on page 4 undefined on input line 5
-0.
-
-
-Package natbib Warning: Citation `MCMC' on page 4 undefined on input line 51.
-
-
-Package natbib Warning: Citation `MCMC' on page 4 undefined on input line 52.
-
-
-Package natbib Warning: Citation `MH' on page 4 undefined on input line 53.
-
-
-Package natbib Warning: Citation `HG' on page 4 undefined on input line 54.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 174--178
 
  []
 
-[4]
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 190--197
 
-Package natbib Warning: Citation `stuart' on page 5 undefined on input line 67.
-
-
-
-Package natbib Warning: Citation `AccRate' on page 5 undefined on input line 76
-.
-
-
-Overfull \hbox (2.16014pt too wide) in paragraph at lines 76--78
-\T1/futs/m/n/12 mul-ti-vari-ate nor-mal tar-get dis-tri-bu-tion \T1/futs/b/n/12
- ?\T1/futs/m/n/12 .Com-monly the user would run the Metropolis-Hastings
  []
 
-[5]
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
 
-Package natbib Warning: Citation `AccRate' on page 6 undefined on input line 81
-.
+ []
 
+[10]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 82.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 245.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 82.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 245.
+ [11]
 
-Package natbib Warning: Citation `550 compstat' on page 6 undefined on input li
-ne 93.
-
-
-Package natbib Warning: Citation `16 compstat' on page 6 undefined on input lin
-e 93.
+Package natbib Warning: Citation `compstat550' on page 12 undefined on input li
+ne 256.
 
 
-Package natbib Warning: Citation `AccRate' on page 6 undefined on input line 10
-2.
+Package natbib Warning: Citation `compstat16' on page 12 undefined on input lin
+e 257.
 
 
-Package natbib Warning: Citation `compstat' on page 6 undefined on input line 1
-03.
+LaTeX Warning: Reference `eq:POT' on page 12 undefined on input line 277.
 
 
-LaTeX Warning: Reference `eq:POT' on page 6 undefined on input line 107.
+LaTeX Warning: Reference `eq:POT' on page 12 undefined on input line 281.
 
-[6]
-
-LaTeX Warning: Reference `eq:POT' on page 7 undefined on input line 111.
-
-
-Package natbib Warning: Citation `BM' on page 7 undefined on input line 132.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 
  []
 
-) [7] (chapter03Data.tex
+) [13] (chapter03Data.tex
 Chapter 2.
-) [8
+) [14
+
+
+
+] (chapter0nConclution.tex
+Chapter 3.
+[15
 
 
 
 ]
-No file thesis.bbl.
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 25.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+))
+[16] (thesis.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
-(thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux)
-(chapter03Data.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5659403A122BBA84C20B9DABD3C1CF92;1368.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
+[17
 
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
+ (thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux)
+(chapter03Data.aux) (chapter0nConclution.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 98B11DC0700B736DDC361D62FCC2B93C;1746
+(rerunfilecheck)             After:  E6ED07425A418C97D6759A697264416F;1753.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 47.
  ) 
 Here is how much of TeX's memory you used:
- 9483 strings out of 493673
- 131855 string characters out of 3141530
- 225275 words of memory out of 3000000
- 12579 multiletter control sequences out of 15000+200000
- 83634 words of font info for 90 fonts, out of 3000000 for 9000
+ 9609 strings out of 493673
+ 133606 string characters out of 3141530
+ 227612 words of memory out of 3000000
+ 12636 multiletter control sequences out of 15000+200000
+ 89575 words of font info for 98 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,15n,34p,1116b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlitb.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/adobe/utopia/putri8a.pfb>
-Output written on thesis.pdf (11 pages, 131010 bytes).
+ 36i,18n,34p,1057b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{section.1.7} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.1.5.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlitb.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+adobe/utopia/putri8a.pfb>
+Output written on thesis.pdf (21 pages, 189792 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 401 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

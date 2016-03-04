@@ -1,0 +1,46 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Box and Muller}{1958}]{BM}
+Box, G. E.~P. and Muller, M.~E. (1958).
+\newblock A note on the generation of random normal deviates.
+\newblock {\em The Annals of Mathematical Statistics}.
+
+\bibitem[\protect\astroncite{Coles}{2001}]{stuart}
+Coles, S. (2001).
+\newblock {\em An Introduction to Statistical Modeling of Extreme Values}.
+\newblock Springer.
+
+\bibitem[\protect\astroncite{Gamerman and Lopes}{2006}]{MCMC}
+Gamerman, D. and Lopes, H.~F. (2006).
+\newblock {\em Markov Chain Monte Carlo: Stochastic Simulation for Bayesian
+  Inference}.
+\newblock Champman and Hall/CRC, 2nd edition.
+
+\bibitem[\protect\astroncite{Gelman et~al.}{1996}]{AccRate}
+Gelman, A., Roberts, G.~O., and Gilks, W.~R. (1996).
+\newblock Efficient metropolis jumping rules.
+\newblock In {\em Bayesian Statistics 5}.
+
+\bibitem[\protect\astroncite{Geman and Geman}{1984}]{GS}
+Geman, S. and Geman, D. (1984).
+\newblock Stochastic relaxation, gibbs distributions, and the bayesian
+  restoration of images.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}.
+
+\bibitem[\protect\astroncite{Givens and Hoeting}{2013}]{compstat}
+Givens, G.~H. and Hoeting, J.~A. (2013).
+\newblock {\em Computational Statistics}.
+\newblock John and Sons, 2nd edition.
+
+\bibitem[\protect\astroncite{Metropolis et~al.}{1953}]{MH}
+Metropolis, N., Rosenbluth, A.~W., Rosenbluth, M.~N., Teller, A.~H., and
+  Teller, E. (1953).
+\newblock Equation of state calculations by fast computing machines.
+\newblock {\em The Journal of Chemical Physics}.
+
+\bibitem[\protect\astroncite{M{\"u}ller}{1991}]{HG}
+M{\"u}ller, P. (1991).
+\newblock A generic approach to posterior integration and gibbs sampling.
+\newblock Technical report, Department of Statistics, Purdue University.
+
+\end{thebibliography}
