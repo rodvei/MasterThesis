@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.22)  4 MAR 2016 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.22)  5 APR 2016 04:44
 entering extended mode
 **thesis.tex
 (thesis.tex
@@ -823,7 +823,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 142.
 ))
 (thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux)
-(chapter03Data.aux) (chapter0nConclution.aux))
+(chapter03Data.aux) (chapter0nConclution.aux) (appendix-b.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
@@ -940,7 +940,7 @@ LaTeX Info: Redefining \nameref on input line 18.
 \@outlinefile=\write3
 \c@lstlisting=\count135
  (front.tex
-<fig/rams.pdf, id=106, 97.80238pt x 44.8345pt>
+<fig/rams.pdf, id=131, 97.80238pt x 44.8345pt>
 File: fig/rams.pdf Graphic file (type pdf)
  <use fig/rams.pdf>
 Package pdftex.def Info: fig/rams.pdf used on input line 8.
@@ -1007,131 +1007,148 @@ Chapter 1.
 [2
 
 
-]
+] [3]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 69.
- [3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 76.
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 111--115
 
  []
 
-[6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 174--178
+<fig/declustplot.png, id=245, 713.66624pt x 352.31625pt>
+File: fig/declustplot.png Graphic file (type png)
 
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 190--197
+<use fig/declustplot.png>
+Package pdftex.def Info: fig/declustplot.png used on input line 125.
+(pdftex.def)             Requested size: 472.03123pt x 233.02939pt.
+ [5] [6 <./fig/declustplot.png>] [7]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 168.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 168.
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-[10]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 245.
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 245.
- [11]
-
-Package natbib Warning: Citation `compstat550' on page 12 undefined on input li
-ne 256.
+[10] [11] [12] [13] [14] [15] [16] [17]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 387.
 
 
-Package natbib Warning: Citation `compstat16' on page 12 undefined on input lin
-e 257.
-
-
-LaTeX Warning: Reference `eq:POT' on page 12 undefined on input line 277.
-
-
-LaTeX Warning: Reference `eq:POT' on page 12 undefined on input line 281.
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
-
- []
-
-) [13] (chapter03Data.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [18]) [19]
+[20] (chapter03Data.tex
 Chapter 2.
-) [14
+) [21
 
 
 
 ] (chapter0nConclution.tex
 Chapter 3.
-[15
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--11
+
+ []
+
+[22
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 25.
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 30.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\ts1futs.fd"
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 ))
-[16] (thesis.bbl)
+[23] (appendix-b.tex
+Appendix A.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
+File: lstlang2.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
+File: lstlang3.sty 2015/06/04 1.6 listings language file
+)
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 17.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 17.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 17.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 17.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7.6> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 17.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <6> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 17.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 17.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 17.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 17.
 
-Package natbib Warning: There were undefined citations.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+) [24
 
+
+
+])
+[25] (thesis.bbl [26
+
+
+])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
-[17
-
-
-]
+ [27]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
- (thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux)
-(chapter03Data.aux) (chapter0nConclution.aux))
+ (thesis.aux (front.aux) (preface.aux) (summary.aux) (chapter02Theory.aux) (cha
+pter03Data.aux) (chapter0nConclution.aux)
+(appendix-b.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 98B11DC0700B736DDC361D62FCC2B93C;1746
-(rerunfilecheck)             After:  E6ED07425A418C97D6759A697264416F;1753.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: A7521957483C78112475680BDD9C652B;2172.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 47.
  ) 
 Here is how much of TeX's memory you used:
- 9609 strings out of 493673
- 133606 string characters out of 3141530
- 227612 words of memory out of 3000000
- 12636 multiletter control sequences out of 15000+200000
- 89575 words of font info for 98 fonts, out of 3000000 for 9000
+ 11004 strings out of 493673
+ 149675 string characters out of 3141530
+ 283516 words of memory out of 3000000
+ 13937 multiletter control sequences out of 15000+200000
+ 125480 words of font info for 128 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,18n,34p,1057b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.1.7} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.5.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlitb.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-adobe/utopia/putri8a.pfb>
-Output written on thesis.pdf (21 pages, 189792 bytes).
+ 41i,20n,67p,1256b,1949s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\rodve\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ectt1200.pk>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ml.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlb.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlit.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mlitb.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/adobe/utopia/putri8a.pfb>
+Output written on thesis.pdf (31 pages, 253494 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 147 named destinations out of 1000 (max. 500000)
+ 267 words of extra memory for PDF output out of 10000 (max. 10000000)
 

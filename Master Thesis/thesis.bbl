@@ -1,14 +1,30 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Atchad{\'e} et~al.}{2011}]{compstat16}
+Atchad{\'e}, Y., Fort, G., Moulines, E., and Priouret, P. (2011).
+\newblock Adaptive markove chain monte carlo: Theory and methods.
+\newblock In {\em Baysian Time Series Models}. Cambrudge Univeristy Press.
+
 \bibitem[\protect\astroncite{Box and Muller}{1958}]{BM}
 Box, G. E.~P. and Muller, M.~E. (1958).
 \newblock A note on the generation of random normal deviates.
 \newblock {\em The Annals of Mathematical Statistics}.
 
+\bibitem[\protect\astroncite{Christoffersen}{1998}]{christoffersen}
+Christoffersen, P.~F. (1998).
+\newblock Evaluating interval forecasts.
+\newblock In {\em International Economic Review}, volume~39, pages 841--862.
+  Economics Department of the University of Pennsylvania.
+
 \bibitem[\protect\astroncite{Coles}{2001}]{stuart}
 Coles, S. (2001).
 \newblock {\em An Introduction to Statistical Modeling of Extreme Values}.
 \newblock Springer.
+
+\bibitem[\protect\astroncite{Eddelbuettel et~al.}{2016}]{rcpp}
+Eddelbuettel, D., Francois, R., Allaire, J., Ushey, K., Kou, Q., Bates, D., and
+  Chambers, J. (2016).
+\newblock {\em Rcpp: Seamless R and C++ Integration}.
 
 \bibitem[\protect\astroncite{Gamerman and Lopes}{2006}]{MCMC}
 Gamerman, D. and Lopes, H.~F. (2006).
@@ -32,6 +48,11 @@ Givens, G.~H. and Hoeting, J.~A. (2013).
 \newblock {\em Computational Statistics}.
 \newblock John and Sons, 2nd edition.
 
+\bibitem[\protect\astroncite{Kupiec}{1995}]{kupiec}
+Kupiec, P.~H. (1995).
+\newblock Techniques for verifying the accuracy of risk measurement models.
+\newblock {\em Journal of Derivatives}.
+
 \bibitem[\protect\astroncite{Metropolis et~al.}{1953}]{MH}
 Metropolis, N., Rosenbluth, A.~W., Rosenbluth, M.~N., Teller, A.~H., and
   Teller, E. (1953).
@@ -42,5 +63,28 @@ Metropolis, N., Rosenbluth, A.~W., Rosenbluth, M.~N., Teller, A.~H., and
 M{\"u}ller, P. (1991).
 \newblock A generic approach to posterior integration and gibbs sampling.
 \newblock Technical report, Department of Statistics, Purdue University.
+
+\bibitem[\protect\astroncite{N{\ae}ss and Gaidai}{2009}]{arvid0}
+N{\ae}ss, A. and Gaidai, O. (2009).
+\newblock Estimation of extreme value from sampled time series.
+\newblock In {\em Structural Safety}, volume~31, pages 325--334.
+
+\bibitem[\protect\astroncite{N{\ae}ss et~al.}{2013}]{arvid}
+N{\ae}ss, A., Gaidai, O., and Karpa, O. (2013).
+\newblock Estimation of extreme value by the average conditional exceedance
+  rate method.
+\newblock {\em Journal of Probability and Statistics}.
+
+\bibitem[\protect\astroncite{{R Core Team}}{2016}]{r}
+{R Core Team} (2016).
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+\newblock {ISBN} 3-900051-07-0.
+
+\bibitem[\protect\astroncite{Roberts and Rosenthal}{2007}]{compstat550}
+Roberts, G.~O. and Rosenthal, J.~S. (2007).
+\newblock Coupling and ergodicity of adaptive markov chain monte carlo
+  algorithms.
+\newblock {\em Journal of Applied Probability}.
 
 \end{thebibliography}
