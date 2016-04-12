@@ -1,6 +1,8 @@
 \chapter[Theory]{Theory}
 The following chapter gives an introduction to the theory behind this work. Some of the sections only give a brief description of the theory with sources for more in depth explanation. %The main focus of this chapter is describing the theory behind the Markov chain Mote Carlo method for solving extreme value problem developed for this paper. 
 \section{Extreme value theory}
+\label{ch:extemevalthe}
+\textcolor{red}{$X$ random variable $x$ observed!}
 %The basics of extreme value theory is to analyze
 The basics of extreme value theory, is to analyze the maximum of a series of random variables $X_1,\dots,X_n$.
 Defining $M_n$ as the maximum of a series
@@ -16,6 +18,7 @@ the resulting distribution of $M_n$ is
 By assuming $X_1,\dots,X_n$ independent and identically distributed (i.i.d.) with common cumulative distribution function $F$, equation \eqref{eq:basicextreem} reduces to
 \begin{align}
 \begin{split}
+\label{eq:basicextreemiid}
     \Pr(M_n \leq z)&=\Pr(X_1 \leq z)\times \dots \times \Pr(X_n \leq z)\\
     &=\big[F(z)\big]^n.   
 \end{split}
@@ -69,11 +72,12 @@ G(z)=\exp\Bigg\{-\Big[1+\xi \Big(\frac{z-\mu}{\sigma} \Big) \Big]^{-\frac{1}{\xi
 \end{equation}
 where $1+\xi(z-\mu)/\sigma>0$, the location parameter is $-\infty<\mu<\infty$, the scale parameter is $\sigma>0$ and the shape parameter is $-\infty<\xi<\infty$. It can easily be verified that the GEV equals equation \eqref{eq:frechet} when $\xi>0$, equation\eqref{eq:weibull} when $\xi<0$ and converge towards equation\eqref{eq:gumbel} as $z \to 0$.
 
-The GEV model requires i.i.d. data points for parameter estimations. Unfortunately, in practice that is rarely the case. Block maxima or r largest order statistics are common methods for filtering the dependent data points into an approximate i.i.d. dataset \cite[p.~66]{stuart}. The basic principle is to only use the largest, or r largest data within each block. Examples of block sizes could be week, month, year etc.
+The GEV model requires i.i.d. data points for parameter estimations. Unfortunately, in practice that is rarely the case. Block maxima or r largest order statistics are common methods for filtering the dependent data points into an approximate i.i.d. dataset \cite[p.~66]{stuart}. The basic principle is to only use the largest, or $r$ largest data within each block. Examples of block sizes could be week, month, year etc.
 
 For a deeper description of extreme value theory, GEV or block maxima, the book of \cite[Chapter~3]{stuart} is suggested.
 
 \subsection{Peak Over Threshold} 
+\label{ch:pot}
 One of the problem with the GEV method and the i.i.d. filtration of data points, is that the block maxima and r largest order statistics are quite wasteful. Specially in situations where some blocks contains more extreme than others, large extreme will be discarded from the set, which else would have been accepted in other blocks.
 
 The Peak Over Threshold (POT) method is suggesting a different method of tackling the i.i.d. filtration. Filtering the data, by only using points over a certain threshold $u$, avoid the problem of discarding large extremes in certain blocks. As long as $u$ is chosen sufficiently large, the resulting data will be i.i.d. Using the GEV distribution equation \eqref{eq:GEV} it can be shown, like was done by \cite[p.~76]{stuart}, that 
@@ -199,15 +203,13 @@ After parameter estimation, future prediction can be achieved using equation \eq
 \\ \\
 \textcolor{red}{HUSK SKRIV OM PLOT FOR ACER TIL z I STEDET FOR $\eta$!!!!!!!!!!}
 
-\subsection{Predicting Future Extreme With Confidence Interval}
-highest posterior density interval (Choosing the narrowest interval)
-
 
 \section{Bayesian Inference}
 \label{ch:BayesianInference}
-For the traditional frequentist statistics, the parameters $\boldsymbol{\theta}$ are assumed fixed, while data $x_1,\dotsc ,x_n$ are random from the underlying distribution $f(\boldsymbol{x}| \boldsymbol{\theta})$. Bayesian statistics, instead treats the parameters $\boldsymbol{\theta}$ with a probability distribution, where it is possible to make subjective believes about the distribution, independent of the data. These subjective beliefs is used to construct a prior distribution $f(\boldsymbol{\theta})$ based on experiences, information or physical knowledge of the situation analyzed. 
+\textcolor{red}{Change all $\alpha$ to $\phi$ for mcmc}\\
+For the traditional frequentist statistics, the parameters $\boldsymbol{\theta}=[\theta_1,\dots,\theta_m]$ are assumed fixed, while observations $\boldsymbol{x}=[x_1,\dots,x_n]$ are random from the underlying distribution $f(\boldsymbol{x}| \boldsymbol{\theta})$. Bayesian statistics, instead treats the parameters $\boldsymbol{\theta}$ with a probability distribution, where it is possible to make subjective believes about the distribution, independent of the data. These subjective beliefs is used to construct a prior distribution $f(\boldsymbol{\theta})$ based on experience, information or physical knowledge of the situation analyzed. 
 
-The posterior distribution of the parameters dependent on the measured data becomes 
+The posterior distribution of the parameters, dependent on the observed data becomes 
 \begin{equation}
 f(\boldsymbol{\theta}|\boldsymbol{x})=\frac{f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta})}{\int_{\Theta} f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta}) \mathrm{d} \theta}, 
 \end{equation}
@@ -222,20 +224,28 @@ f(\boldsymbol{\theta}|\boldsymbol{x}) \sim c \cdot f(\boldsymbol{\theta})f(\bold
 \end{equation}
 where $c=1/ \int_{\Theta} f(\boldsymbol{\theta})f(\boldsymbol{x}|\boldsymbol{\theta}) \mathrm{d} \theta$ is the normalizing constant.
 
-A conjugate prior is a prior which combined with the likelihood function construct a posterior distribution in the same family as the prior.  Conjugate priors are often preferred because of the analytical luxury and computational simplicity.\\
+A conjugate prior is a prior which combined with the likelihood function construct a posterior distribution in the same family as the prior.  Conjugate priors are often preferred because of the analytical luxury and computational simplicity.
 
-Since Bayesian inference accounts for the distribution of parameters, equation \eqref{eq:potPred} can be rewritten using $\Pr(X>u)=\alpha$
+Estimating a future point $z$ which follows the distribution $f(z|\boldsymbol{\theta})$, can then be don using the posterior distribution $f(\boldsymbol{\theta}|\boldsymbol{x})$. The predicted point then becomes dependent of the observed data
 \begin{equation}
-\Pr(X>z)=\alpha \left[1+\xi \left( \frac{z-u}{\sigma}\right)\right]^{-\frac{1}{\xi}},
+\label{eq:bayfuture}
+f(z|\boldsymbol{y})={\int_{\Theta} f(z|\boldsymbol{\theta}) f(\boldsymbol{\theta}|\boldsymbol{x})\mathrm{d} \theta}.
 \end{equation}
-where $\alpha$, $\xi$ and $\sigma$ are the unknown parameters. Since $\alpha$ is the probability of a point being larger than the threshold, $\alpha$ is independent of $\xi$ and $\sigma$. For the independent parameters, development of the posterior distributions can be treated separately. 
+\\
+
+Since Bayesian inference accounts for the distribution of parameters, equation \eqref{eq:potPred} can be rewritten using $\Pr(Z>u)=\psi$
+\begin{equation}
+\label{eq:potmcmc}
+\Pr(Z>z|\xi,\sigma,\psi)=\psi \left[1+\xi \left( \frac{z-u}{\sigma}\right)\right]^{-\frac{1}{\xi}},
+\end{equation}
+where $\psi$, $\xi$ and $\sigma$ are the unknown parameters. Since $\psi$ is the probability of a point being larger than the threshold, $\psi$ is independent of $\xi$ and $\sigma$. Development of posterior distributions for independent parameters can be treated separately. 
 
 Starting with $\xi$ and $\sigma$, by combining equation \eqref{eq:jointdens} and \eqref{eq:potwxi}, the joint density function for the POT method becomes
 \begin{align}
 f(\boldsymbol{y}|\xi,\sigma)&=\prod_{i=1}^{n} h(y_i|\xi,\sigma)\nonumber\\
 &=\sigma^{-n} \prod_{i=1}^{n}\left( 1+\frac{\xi y_i}{\sigma}\right)^{-\left(1+\frac{1}{\xi}\right)}, \label{eq:jointdenspot}
 \end{align}
-or by \eqref{eq:potwoxi} for $\xi=0$, $f(\boldsymbol{y}|\sigma)=\sigma^{-n}\exp\left\{-\sigma^{-1} \sum_{i=1}^{n}y_i \right\}$.  here $h$ is the probability density function of the GPD, while $n$ is the numbers of threshold excess.
+or by \eqref{eq:potwoxi} for $\xi=0$, $f(\boldsymbol{y}|\sigma)=\sigma^{-n}\exp\left\{-\sigma^{-1} \sum_{i=1}^{n}y_i \right\}$.  Here $h$ is the probability density function of the GPD, $\boldsymbol{y}$ of threshold excess and $n$ is the numbers of threshold excess.
 
 The obvious beginning for investigating priors is the conjugate priors, but unfortunately, there do not appear to be any conjugate priors for the joint GPD. This work, will not go into depth on how to select Bayesian priors for the GPD, but instead use the suggestion proposed by \cite[p.~174]{stuart}. Note that there are potential improvements by deeper investigation of GPD or GEV priors, especially for priors developed for specific situations where there are physical knowledge or practical experiences about the parameters. Since $\sigma>0$, the transformation $\phi=\log(\sigma)$ ensures $\sigma$ to be valid without restriction on $\phi$. The suggested priors are $f_{\phi}(\cdot)$ and $f_{\xi}(\cdot)$ to be normally distributed around zero with variance $v_{\phi}=10^4$ and $v_{\xi}=100$. 
 
@@ -250,23 +260,23 @@ The posterior distribution of the parameters can then be developed by the priors
 \begin{align}
 f_{\xi,\phi|\boldsymbol{y}}(\xi,\phi|\boldsymbol{y})\sim c \cdot f_{\boldsymbol{y}|\xi,\sigma}\left(\boldsymbol{y}|\xi,\exp(\phi)\right)f_{\xi}(\xi)f_{\phi}(\phi), \label{eq:potpost}
 \end{align}
-where again c is the normalizing constant, $f_{\boldsymbol{y}|\xi,\sigma}$ is as in \eqref{eq:jointdenspot}, $f_{\xi}(\xi)\sim N(0,100)$ and $f_{\phi}(\phi) \sim N(0,10^4)$.
+where again c is the normalizing constant, $f_{\boldsymbol{y}|\xi,\sigma}$ is as in \eqref{eq:jointdenspot}, $f_{\xi}(\xi)\sim N(0,100)$ and $f_{\phi}(\phi) \sim N(0,10^4)$, and $N(\mu,\sigma^2)$ indicates the normal distribution with mean $\mu$ and variance $\sigma^2$.
 
-The development of $\alpha$ posterior distribution, can be started with investigating priors. Since $\alpha$ simply equals $\Pr(X>u)$, the range is limited between $0$ and $1$. For simplicity the prior is set proportional to the uniform distribution on the interval $(0,1)$, $f(\alpha) \sim UNIF(0,1)$. It is noted that in reality the distribution of $\alpha$ is not flat. Low valued $\alpha$ is more probably then high, while the probability converges to zero for the endpoints. A well-tuned Beta distributed prior could account for this, and improve the result.
+The development of $\psi$ posterior distribution, can be started with investigating priors. Since $\psi$ simply equals $\Pr(X>u)$, the range is limited between $0$ and $1$. For simplicity the prior is set proportional to the uniform distribution on the interval $(0,1)$, $f(\psi) \sim UNIF(0,1)$. It is noted that in reality the distribution of $\psi$ is not flat. Low valued $\psi$ is more probable then high, while the probability converges to zero for the endpoints. A well-tuned Beta distributed prior could account for this, and improve the result.
 
-The joint density function can be created by the fact that $\alpha$ simply equals the probability of a random point exceeding the threshold. This can be expressed using the binominal distribution, $k_i$ for the numbers of points exceeding the threshold and $N_i$ for the total numbers of point, each for a given period $i$. For a total $m$ numbers of periods, the posterior distribution equals
+The joint density function can be created by the fact that $\psi$ simply equals the probability that a random event exceeds the threshold. This can be expressed using the binominal distribution, where $k_i$ indicates the numbers of points exceeding the threshold and $N_i$ indicates the total numbers of point, each for a given period $i$. For a total $m$ numbers of periods, the posterior distribution equals
 \begin{align}
-f(\alpha|k_1,\dotsc,k_n, N_1, \dotsc, N_n)&\sim f(\alpha)\cdot \prod_{i=1}^{m} f(k_i|N_i,\alpha)\nonumber\\
-&=\prod_{i=1}^{m} \binom{N_i}{k_i} \alpha^{k_i}(1-\alpha)^{N_i-k_i}\nonumber\\
-& \sim \alpha^{\sum_{i=1}^{m}k_i}(1-\alpha)^{\sum_{i=1}^{m}N_i-\sum_{i=1}^{m}k_i}.\label{eq:alphaposttemp}
+f(\psi|k_1,\dotsc,k_n, N_1, \dotsc, N_n)&\sim f(\psi)\cdot \prod_{i=1}^{m} f(k_i|N_i,\psi)\nonumber\\
+&=\prod_{i=1}^{m} \binom{N_i}{k_i} \psi^{k_i}(1-\psi)^{N_i-k_i}\nonumber\\
+& \sim \psi^{\sum_{i=1}^{m}k_i}(1-\psi)^{\sum_{i=1}^{m}N_i-\sum_{i=1}^{m}k_i}.\label{eq:alphaposttemp}
 \end{align}
-The resulting distribution is independent of period selection, the notation $k$ and $N$ can be used for the total numbers of exceedance and the total numbers of measurements respectively. It is noted that the distribution is proportional to the Beta distribution. Since there only exist one normalizing constant which fulfills the requirements for a probability distribution, the posterior distribution is not only proportional, but equal to the Beta distribution. Rewriting equation \eqref{eq:alphaposttemp} gives
+The resulting distribution is independent of period selection, the notation $k$ and $N$ can be used for the total numbers of exceedance and the total numbers of measurements respectively. It is noted that the distribution is proportional to the Beta distribution. Since there only exist one normalizing constant which satisfies the requirements for a probability distribution, the posterior distribution is not only proportional, but equal to the Beta distribution. Rewriting equation \eqref{eq:alphaposttemp} gives
 \begin{equation}
 \label{eq:alphapost}
-f(\alpha|k,N) \sim BETA(k+1,N-k+1).
+f(\psi|k,N) \sim BETA(k+1,N-k+1).
 \end{equation}
 
-\section{Markov Chain Monte Carlo Method}
+\section{Markov Chain Monte Carlo}
 \label{ch:mcmc}
 %High dimentional problem (TMA4300 2014 first mcmc)
 Markov Chain Monte Carlo (MCMC) is a powerful iterative method used to sample from probability distributions, which analytically or through other simulation methods, could be difficult and impracticable to sample from. The algorithm is constructed by converging the desired probability distribution to an irreducible and aperiodic Markov Chain with limiting distribution equal the target distribution. Independent of starting position the Markov Chain will then converge towards the desired probability distribution in the limit as the numbers of iterations goes to infinity. The first numbers of realizations from the Markov Chain until converging is called the burn-in period, and is discarded for further analyses. More information about burn-in can be found in \cite[p.220]{compstat}. The remaining realizations, approximately follows the desired probability distribution, where the accuracy increase as the numbers of realizations increase. Monte Carlo method can then be used to calculate the quantity of interest like mean, expected value, future prediction, credible interval etc. For more in depth description of the MCMC method see the books of \cite{MCMC} and \cite[Chapter~7,8]{compstat}.
@@ -352,15 +362,16 @@ the series acceptance rate will converge towards $a$ \cite[p.~248]{compstat}.
 A more detailed description of the adaptive metropolis algorithm can be found in \cite[p.~247]{compstat}.
 \textcolor{red}{CHECK BOLDSYMBOL FOR VECTOR AND MATRIX!!}
 \subsection{Applying Markov Chain Monte Carlo to Peak Over Threshold}
+
 From chapter \ref{ch:BayesianInference}, the two equation \eqref{eq:potpost} and \eqref{eq:alphapost} construct the basis for the blocking Gibbs sampler
 \begin{align*}
 \xi^{t+1},\phi^{t+1}|\cdot & \sim c \cdot f_{\boldsymbol{y}|\xi,\sigma}\left(\boldsymbol{y}|\xi,\exp(\phi)\right)f_{\xi}(\xi)f_{\phi}(\phi)\\
-\alpha^{t+1}|\cdot & \sim BETA(k+1, N-k+1),
+\psi^{t+1}|\cdot & \sim BETA(k+1, N-k+1),
 \end{align*}
-where the parameters and functions are described above in chapter \ref{ch:BayesianInference}. After the Markov chain sampling is complete, the transformation $\sigma=\exp(\phi)$ ensure correct parameter for the Monte Carlo simulation's. Sampling form $\alpha$ is straight forward since it is simply realizations of the Beta distribution, while $\xi, \sigma$ is more complex, and cannot directly be sampled. The challenge of calculating the computationally heavy $c$ for each iteration favors the implementation of the Metropolish-Hastings algorithm.
+where the parameters and functions are described above in chapter \ref{ch:BayesianInference}. After the Markov chain sampling is complete, the transformation $\sigma=\exp(\phi)$ ensure correct parameter for the Monte Carlo simulation's. Sampling form $\psi$ is straight forward since it is simply realizations of the Beta distribution, while $\xi, \sigma$ is more complex, and cannot directly be sampled. The challenge of calculating the computationally heavy $c$ for each iteration favors the implementation of the Metropolish-Hastings algorithm.
 
  
-The algorithm independency of user dependent tuning and improved convergence speed makes the adaptive Metropolis-Hasting algorithm, described in chapter \ref{ch:ama}, favorable for $\xi, \sigma$. The posterior distribution often results in extremely small values, which in some cases could get disrupted by the violation of the smallest floating number for the software. To account for this, the logarithm of equation \eqref{eq:metropolis} is used. The resulting log Metropolis ratio
+The algorithm independency of the user for tuning and improved convergence speed makes the adaptive Metropolis-Hasting algorithm, described in chapter \ref{ch:ama}, favorable for $\xi, \sigma$. The posterior distribution often results in extremely small values, which in some cases could get disrupted by the violation of the smallest floating number for the software. To account for this, the logarithm of equation \eqref{eq:metropolis} is used. The resulting log Metropolis ratio becomes, 
 \begin{align}
 \ln \left[ R(\boldsymbol{X} \mbox{*},\boldsymbol{X}^{t}) \right] &= \ln \left[ f_{\xi,\phi|\boldsymbol{y}}(\xi\mbox{*},\phi\mbox{*}|\boldsymbol{y}) \right]-\ln \left[ f_{\xi,\phi|\boldsymbol{y}}(\xi^{t},\phi^{t}|\boldsymbol{y}) \right] \nonumber\\
 \begin{split}
@@ -383,6 +394,17 @@ For the equations, $t$ indicate the parameter iteration number, $ \mbox{*}$ indi
 
 The remaining construction of the AMCMC simmulator is as described above in chapter \ref{ch:ama}. The result is a hybrid Gibbs AMCMC simulator, for the POT method. The Markov chain is valid since both Gibbs steps are irreducible and aperiodic. Irreducible because each sampler within their restricted range can sample any realization with probability larger than zero, from any state. Aperiodic since both Gibbs steps can return to their state in a single iteration, with probability larger than zero.
 
+To limit the possibility of the adaptive Metropolis-Hastings algorithm getting stuck in a slowly converging area before reaching the target distribution, multiple independent MCMC simulations with different starting values for $\xi^0$ and $\phi ^0$ are used. After convergence the latest value of $\xi^t$ and $\phi^t$ between the MCMC simulations with the highest $f_{\xi,\phi}(\xi^t,\phi^t) f(\xi^t) f(phi^t)$ is selected for future realization generation, while all points generated prior to this point for each starting value is discarded as burn-in.   
+
+Estimation and credible interval can simply be added through Monte Carlo simulation.
+For a parameter realizations of size $T$ after burn-in is removed, where the effective sample size is sufficient, equation \eqref{eq:bayfuture} is estimated as
+\begin{equation}
+\label{eq:mcmcfuture}
+\hat{\Pr}(Z>z|\boldsymbol{y})=\frac{1}{T}\sum_{t=1}^{T}\Pr(Z>z|\xi^t,\sigma^t,\psi^t).
+\end{equation}
+The estimation is unbiased since $(\xi^t,\sigma^t,\psi^t) \sim f(\xi,\sigma,\psi|\boldsymbol{y})$. 
+The $100 \cdot \alpha \%$ credible interval for a specific $z=s$ can be added to the $\hat{\Pr}(Z>s| \boldsymbol{y})$ estimation by sorting the result of $\Pr(Z>s|\xi^t,\sigma^t,\psi^t)$ for every realizations, and selecting lower and upper limits for where $100 \cdot \alpha \%$ of the results are contained. The narrowest interval is chosen for this work and is called the highest posterior density interval. Example of the use of such interval can be seen in figure \ref{fig:paretoacermcmc}, where the credible interval has been estimated on multiple $z$ values for the MCMC method.
+
 \subsection{Multivariate Random Normal Generator}
 Most of the coding for this work was done in {\tt{R}}. Since the MCMC accuracy increase with the numbers of iteration generated, parts of the AMCMC algorithm was coded in C\texttt{++}, through the Rcpp package by \cite{rcpp}, for speed optimization. The AMCMC for $\xi$ and $\phi$ uses a bivariate random normal generator, but this is not natively supported in C\texttt{++}. Since no additional packages tested was satisfactory for the purpose, the bivariate random normal generator was constructed.
 
@@ -400,11 +422,89 @@ where $\boldsymbol{\Sigma}=\boldsymbol{A}\boldsymbol{A}^T$. For this work $\bold
 \textcolor{red}{STATE SOMEWHERE THAT $\log$ IS THE NATURAL LOGRATIM?}
 
 
-\section{Value at Risk}
-mer bla bla
-\section{Evaluating Forecasts}
+\section{Forecasting Extreme}
+For this work two methods were used for prediction and forecasting of future extreme. 
+\textcolor{red}{IT IS CALLED PREDICTION INTERVAL NOT CONFIDENCE/CREDIBLE INTERVAL!! CONFIDENCE/CREDIBLE INTERVALS ARE FOR MEAN}
+\subsection{Value at Risk}
+Value at risk (VaR) for confidence $\alpha$ is defined as the smallest value $l$ which the loss $L$ of the portfolio will exceed with probability $\alpha$, over a given time period $h$
+\begin{equation}
+\label{eq:vardef}
+\Pr(L_{h} \geq l_{h,\alpha})=\alpha.
+\end{equation}
+As this work only considers 1 day VaR the simplified notation $\text{VaR}_{\alpha}= l_{\alpha}$ is used.
+
+By inverting equation \eqref{eq:acerest}, VaR of the ACER method for a given $k$ is calculated as
+\begin{equation}
+\text{VaR}_{\alpha}= b+\left[\frac{1}{a \xi} \left(\frac{q}{\alpha} \right)^{\xi}-1 \right]^{1/c}.
+\end{equation}
+
+For the POT MCMC method, equation \eqref{eq:potmcmc} is inverted, for which the VaR follows
+\begin{equation}
+\text{VaR}_{\alpha}^{t}=u+\frac{\sigma^t}{\xi^t} \left[ \left( \frac{\psi^t}{\alpha}\right)^{\xi^t} -1 \right],
+\end{equation}
+where $t$ indicates the sampled realization number from the MCMC. As the reasoning for equation \eqref{eq:mcmcfuture}, the estimated VaR becomes $\text{VaR}_\alpha=1/T \sum_{t=1}^T \text{VaR}_{\alpha}^{t}$, where $T$ is the total numbers of realizations generated after burn-in is removed.
+
+Dependent if the portfolio is on buy or sell, the value at risk make sense for both increase and decrease of daily return respectively. For VaR on decreasing data, the extreme of the negative dataset $-X_1,\dots,-X_n$ is analyzed instead.
+\textcolor{red}{IS THIS ACTUALLY DONE FOR DECREASING DAILY RETURNS?}
+\subsection{Forecasting Extreme Confidence Interval}
+\label{ch:predconf}
+The VaR gives an approach for testing how well the ACER and POT MCMC methods estimates the underlying distribution. The VaR estimation does not reflect how well the ACER and POT MCMC captures the estimation variability. By analyzing the maximum of a future time series, a method for testing variability is developed.
+
+As stated earlier in chapter \ref{ch:pot}, for time series with no trend, the most extreme events are approximately i.i.d, thus at the tails, equation \eqref{eq:basicextreem} can be approximated as \eqref{eq:basicextreemiid}.  The estimated cumulative distribution $\hat{F}(z)$ can thereby be used for estimating the maximum of a future long time series by
+\begin{equation}
+\label{eq:estbasicextreemiid}
+\Pr(M_n < z)\approx \left[ \hat{F}(z)\right]^n,
+\end{equation}
+where $n$ is the number of points in the time series, as in chapter \ref{ch:extemevalthe}.  Both the ACER and POT MCMC method is developed for $\hat{\Pr}(X>z)=1-\hat{F}(z)$, see equation \eqref{eq:acerest} and \eqref{eq:potmcmc} respectively. The $100 \cdot \alpha \%$ confidence interval of the most extreme of n points, or $n$th extreme, can be found by
+\begin{equation}
+\alpha=\Pr(m_{n,p_1} \leq M_n \leq m_{n,p_2}),
+\end{equation}
+where $\Pr(M_n < m_{n,p_1})=p_1$, $\Pr(M_n < m_{n,p_2})=p_2$, $p_2-p_1=\alpha$, and both $p_1$ and $p_2$ is between $0$ and $1$. Using equation \eqref{eq:estbasicextreemiid}, the value of $m_{n,p}$ for a given $n$ and $p$ can be estimated by inverting \eqref{eq:acerest}, resulting in 
+\begin{equation}
+\hat{m}_{n,p}= b+\left[\frac{1}{a \xi} \left(\frac{q}{ 1-p^{1/n} } \right)^{\xi}-1 \right]^{1/c}.
+\end{equation}
+for the ACER method. By computing $ \hat{m}_{n,p_1}$ and $ \hat{m}_{n,p_2}$ for a variety of $p_1,p_2$ satisfying $\alpha=p_2-p_1$, the highest posterior density interval is chosen as confidence interval.
+
+The credible interval for the POT MCMC method is calculated by generating realizations of the $n$th extreme $z_n$, using various versions of parameter realizations generated by the MCMC method. Values of the estimated $z_n$ can be generated using the probability integral transform approach, where $\Pr(X < x) \sim UNIF(0,1)$, combined with equation \eqref{eq:potmcmc} and \eqref{eq:estbasicextreemiid}, this gives
+\begin{equation}
+\hat{z}_n^{i}=u+\frac{\sigma^t}{\xi^t} \left[ \left( \frac{\psi^t}{1-y_{i}^{1/n}}\right)^{\xi^t} -1 \right],
+\end{equation}
+where $y_{i}\sim UNIF(0,1)$, $i$ is the $i$th realization of $\hat{z}_n$ and $t$ is the parameter realization number. For a high number of realization, the $100 \cdot \alpha \%$ highest posterior density interval is chosen by sorting $\hat{z}_n^i$ by values, and selecting the narrowest continues interval which holds $100 \cdot \alpha \%$ of the data.
+The POT MCMC credible interval also captures the parameter variation, unfortunately this is not the case for the confidence interval generated by the ACER method and therefor will result in a too narrow interval.
+
+By definition the median of a cumulative distribution function is the number $a$ that satisfy $\Pr(X<a)=1/2$, consequently the median of the $n$th extreme equals $m_{n,1/2}$.
+The most extreme of $n$ points can also be expressed by a probability $1/n$, for example the $0.01$ extreme equals the $1$ in $100$ or $n=100$ extreme.
+\textcolor{red}{UNIF, BETA osv, uset text{}. "By definition the median" kanskje ikke noedvendig??}
+
+\section{Test and Evaluation}
+\subsection{Likelihood-ratio test}
+Likelihood ratio test is a method of comparing different models goodness of fit. The test required a null model $ \boldsymbol{\theta_0}$, and an alternative model $\boldsymbol{\theta_a}$, where the null model is a nested subset of the alternative. The test statistics is approximately chi-square distributed, with $df_a-df_0$ degrees of freedom, where $df_x$ is the models $x$ number of free parameters. The log likelihood ratio test statistics have the following relationship
+\begin{equation}
+\label{eq:loglikratiotest}
+\chi_{(df_a-df_0)}^{2} \sim 2 \left[ \log \left( f(\boldsymbol{x}|\boldsymbol{\theta_a})\right) - \log \left( f(\boldsymbol{x}|\boldsymbol{\theta_0}) \right) \right],
+\end{equation}
+where $f(\boldsymbol{x}|\boldsymbol{\theta})$ is the likelihood function seen in equation \eqref{eq:jointdens} and $\chi^2$ is the chi-square distribution. 
+
+\subsection{AIC and BIC}
+\textcolor{red}{mention AIC and BIC}
+best is minimum AIC value
+lowest BIC is preferred
+
+\subsection{Evaluating Forecasts}
 blablabla likelihood ratio, \cite{kupiec}, \cite{christoffersen}.
 
 And scoring table (how to).
-\section{ARCH/GARCH}%????
-is this needed????
+\section{ARMA-APARCH}%????
+The Autoregressive Moving Average (ARMA) model, is a method of analyzing time series. The $\text{ARMA}(p,q)$ model for a time series $Z_{1}, \dots, Z_{T}$, where $\dot{Z_t}=Z_t-\mu$ and $\mu$ is the mean of $\boldsymbol{Z}$, is given by
+\begin{equation}
+\dot{Z_t}=\sum_{i=1}^{p} \phi_i \dot{Z}_{t-i} \sum_{j=1}^{q} \theta_j e_{t-j}+e_{t},
+\end{equation}
+where $\phi$ is the Autoregressive (AR) parameters, $\theta$ is the Moving Average (MA) parameters and $e$ is the error term. For $q=0$ and $p=0$ the $\text{ARMA}(p,q)$ model is referred to as $\text{AR}(p)$ and $\text{MA}(q)$ respectively.
+
+In situations where the error term is heteroscedastic, an Asymmetric Power Autoregressive Conditional Heteroscedasticity (APARCH) model can be included. For the time series above, the $\text{APARCH}(k,l)$ model is as follows
+\begin{equation}
+\sigma_{t}^{\delta}=\omega+\sum_{k=1}^{r}\alpha_k \left(|e_{t-k}|-\gamma_k e_{t-k} \right)^{\delta}+\sum_{l=1}^{s}\beta_l(\sigma_{t-l})^{\delta},
+\end{equation}
+where $e_{t}=\sigma_{t}\epsilon_{t}$ and $\epsilon_{t}$ is a homoscedastic error term. The APARCH model equals the Autoregressive Conditional Heteroscedasticity (ARCH) for $\delta=2, \ \gamma=0, \ \beta=0$, the Generalized Autoregressive Conditional Heteroscedasticity (GARCH) for $\delta=2, \ \gamma=0$ and the Glosten Jagannathan Runkle (GJR) GARCH for $\delta=2$.
+The APARCH model has shown to work well for fat tails, excess kurtosis and leverage effects.
+For the data analyzed in this work, the error term $\epsilon_{t}$ is assumed to follow a skewed student t distribution. Thus $\epsilon_{t} \sim \text{Skew}(\mu=0,\sigma=1,\nu,\xi)$, where $\mu$ is location, $\sigma$ is scale, $\nu$ is shape and $\xi$ is the skewness parameters. The theory behind the skewed student t distribution is not presented here, but a detail description can be found in \cite{sstd}. 

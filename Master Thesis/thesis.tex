@@ -8,7 +8,6 @@
 %%===================================
 \documentclass[12pt]{report}
 \usepackage{ramsstyle}
-
 %%===================================
 %Write the various parts of your thesis as separate files and include them into the main file by the command \include{name of included file}. When you compile the LaTeX file, you may choose which subfiles to include by the command
 
@@ -19,17 +18,18 @@
 \include{front} % This is the titlepage
 \setcounter{page}{0}
 \pagenumbering{roman}
-\include{preface}
+%\include{preface}
 %\include{acknowledgment}
-\include{summary}
+%\include{summary}
 \tableofcontents
 \setcounter{page}{0}
 \pagenumbering{arabic}
 %\include{chapter01Introduction}
 \include{chapter02Theory}
 \include{chapter03Data}
+\include{chapter04Result}
 %\include{chapter02}
-\include{chapter0nConclution}
+%\include{chapter0nConclution}
 % Include more chapters as required.
 %%=========================================
 \appendix

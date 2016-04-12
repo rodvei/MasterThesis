@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Aloui and Mabrouk}{2010}]{fattail}
+Aloui, C. and Mabrouk, S. (2010).
+\newblock Value-at-risk estimations of energy commodities via long-memory,
+  asymmetry and fat-tailed garch models.
+\newblock {\em Energy Policy}.
+
 \bibitem[\protect\astroncite{Atchad{\'e} et~al.}{2011}]{compstat16}
 Atchad{\'e}, Y., Fort, G., Moulines, E., and Priouret, P. (2011).
 \newblock Adaptive markove chain monte carlo: Theory and methods.
@@ -26,6 +32,11 @@ Eddelbuettel, D., Francois, R., Allaire, J., Ushey, K., Kou, Q., Bates, D., and
   Chambers, J. (2016).
 \newblock {\em Rcpp: Seamless R and C++ Integration}.
 
+\bibitem[\protect\astroncite{Fernandez and Steel}{1998}]{sstd}
+Fernandez, C. and Steel, M. F.~T. (1998).
+\newblock On bayesian modeling of fat tails and skewness.
+\newblock {\em Journal of the American Statistical Assosiation}, 93(441).
+
 \bibitem[\protect\astroncite{Gamerman and Lopes}{2006}]{MCMC}
 Gamerman, D. and Lopes, H.~F. (2006).
 \newblock {\em Markov Chain Monte Carlo: Stochastic Simulation for Bayesian
@@ -42,6 +53,11 @@ Geman, S. and Geman, D. (1984).
 \newblock Stochastic relaxation, gibbs distributions, and the bayesian
   restoration of images.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}.
+
+\bibitem[\protect\astroncite{Giot and Laurent}{2003}]{aparch}
+Giot, P. and Laurent, S. (2003).
+\newblock Market risk in commodity markets: a var approach.
+\newblock In {\em Energy Economics}, volume~25, pages 435--457. Elsevier.
 
 \bibitem[\protect\astroncite{Givens and Hoeting}{2013}]{compstat}
 Givens, G.~H. and Hoeting, J.~A. (2013).
@@ -74,12 +90,6 @@ N{\ae}ss, A., Gaidai, O., and Karpa, O. (2013).
 \newblock Estimation of extreme value by the average conditional exceedance
   rate method.
 \newblock {\em Journal of Probability and Statistics}.
-
-\bibitem[\protect\astroncite{{R Core Team}}{2016}]{r}
-{R Core Team} (2016).
-\newblock {\em R: A Language and Environment for Statistical Computing}.
-\newblock R Foundation for Statistical Computing, Vienna, Austria.
-\newblock {ISBN} 3-900051-07-0.
 
 \bibitem[\protect\astroncite{Roberts and Rosenthal}{2007}]{compstat550}
 Roberts, G.~O. and Rosenthal, J.~S. (2007).
